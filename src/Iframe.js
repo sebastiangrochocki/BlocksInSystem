@@ -2,7 +2,7 @@ import React from "react";
 import "./Iframe.scss"; // You can create a corresponding SCSS file for styling
 import Paragraph from "./Paragraph";
 import Flex from "./Flex";
-import figmaLogo from "./../assets/figmaLogo.svg";
+import figmaLogo from "./assets/figmaLogo.svg";
 
 const IframeComponent = ({ url, title = "Iframe Title" }) => {
   if (!url) {

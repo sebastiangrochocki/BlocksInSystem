@@ -2,10 +2,10 @@ import React from "react";
 import "./Avatar.scss";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import Paragraph from "./Paragraph";
-import AvatarDemo1 from "assets/AvatarDemo1.svg";
-import AvatarDemo2 from "assets/AvatarDemo2.svg";
-import AvatarDemo3 from "assets/AvatarDemo3.svg";
-import AvatarDemo4 from "assets/AvatarDemo4.svg";
+import AvatarDemo1 from "./assets/AvatarDemo1.svg";
+import AvatarDemo2 from "./assets/AvatarDemo2.svg";
+import AvatarDemo3 from "./assets/AvatarDemo3.svg";
+import AvatarDemo4 from "./assets/AvatarDemo4.svg";
 
 const Avatar = ({ avatar, altText, role }) => {
   // Function to randomly select an avatar
