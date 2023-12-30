@@ -1,50 +1,30 @@
 {
     "name": "blocksin-system",
-    "version": "1.0.1",
-    "main": "index.js",
+    "version": "1.0.2",
+    "main": "dist/index.js",
     "files": [
-        "Avatar.js",
-        "Badge.js",
-        "Button.js",
-        "CheckboxCustom.js",
-        "CodeHighlight.js",
-        "Flex.js",
-        "Heading.js",
-        "IconButton.js",
-        "Iframe.js",
-        "Input.js",
-        "Paragraph.js",
-        "Separator.js",
-        "Tag.js",
-        "TopBanner.js",
-        "Youtube.js",
-        "Avatar.scss",
-        "Badge.scss",
-        "Button.scss",
-        "CheckboxCustom.scss",
-        "CodeHighlight.scss",
-        "Flex.scss",
-        "Heading.scss",
-        "IconButton.scss",
-        "Iframe.scss",
-        "Input.scss",
-        "Paragraph.scss",
-        "Separator.scss",
-        "Tag.scss",
-        "TopBanner.scss",
-        "Youtube.scss",
-        "Variables.scss"
+      "dist"
     ],
+    "scripts": {
+      "build": "babel src --out-dir dist --copy-files"
+    },
     "dependencies": {
-        "@radix-ui/react-icons": "^1.3.0",
-        "@radix-ui/react-tooltip": "^1.0.1",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "sass": "^1.69.5"
+      "@radix-ui/react-icons": "^1.3.0",
+      "@radix-ui/react-tooltip": "^1.0.1",
+      "react": "^17.0.2",
+      "react-dom": "^17.0.2",
+      "sass": "^1.69.5"
     },
     "keywords": [
-        "react",
-        "components"
+      "react",
+      "components"
     ],
-    "license": "MIT"
-}
+    "license": "MIT",
+    "devDependencies": {
+      "@babel/cli": "^7.23.4",
+      "@babel/core": "^7.23.7",
+      "@babel/preset-env": "^7.23.7",
+      "@babel/preset-react": "^7.23.3"
+    }
+  }
+  
