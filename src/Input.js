@@ -11,6 +11,9 @@ const Input = ({
   value,
   onChange,
   className,
+  disabled,
+  onClick,
+  validation,
   // hideLabel = false,
 }) => {
   const isSearchInput = type === "search";
@@ -19,6 +22,7 @@ const Input = ({
       className={`inputfield ${isSearchInput ? "inputSearch" : ""} ${
         className || ""
       }`}
+      disabled={disabled}
     >
       {isSearchInput && <MagnifyingGlassIcon />}
       <input
@@ -27,11 +31,14 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onClick={onClick}
       />
       {type !== "number" && <label>{label}</label>}
       {errormsg !== false && <p>{errormsg}</p>}
 
-      {type !== "number" && <span></span>}
+      {type !== "number" && type !== "date" && validation !== false && (
+        <span></span>
+      )}
     </div>
   );
 };

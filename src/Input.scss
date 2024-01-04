@@ -23,6 +23,18 @@ input[type="search"]::-webkit-search-cancel-button {
             text-shadow: none;
         }
     }
+    &[disabled] {
+        pointer-events: none;
+        input {
+            background-color: var(--background-neutral-disabled);
+            color: var(--foreground-neutral-disabled);
+            border: 1px solid var(--background-neutral-disabled);
+        }
+        label {
+            background-color: var(--background-neutral-disabled);
+            color: var(--foreground-neutral-disabled);
+        }
+    }
     &.inputSearch {
         position: relative;
         color: var(--foreground-neutral);
@@ -49,6 +61,7 @@ input[type="search"]::-webkit-search-cancel-button {
         padding: 0px var(--size-500) 0px var(--size-150);
         background-color: var(--background-neutral-container);
         box-sizing: border-box;
+        font-family: var(--font-body);
         &[type="number"] {
             -moz-appearance: textfield; /* For Firefox */
             padding: 0 var(--size-50);
@@ -135,4 +148,14 @@ input[type="search"]::-webkit-search-cancel-button {
 .inputfield p {
     display: none;
     font-size: 14px;
+}
+
+.custom-datepicker {
+    /* Adjust the position */
+    position: absolute;
+    top: 8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    
+    /* Additional styling as needed */
 }

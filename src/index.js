@@ -16,4 +16,6 @@ export { default as UserListItem } from './UserListItem';
 export { default as CustomToast } from './CustomToast';
 export { default as Youtube } from './Youtube';
 export { default as BadgeLevel } from './BadgeLevel';
+export { default as TextArea } from './TextArea';
+export { default as Loader } from './Loader';
 export { default as Styles } from './Variables.scss';

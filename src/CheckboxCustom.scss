@@ -15,6 +15,11 @@
         background-color: var(--background-primary);
         color: var(--black);
         border-color: var(--black);
+        .CheckboxIndicator {
+            svg {
+                color: var(--black);
+            }
+        }
         &:hover {
             background-color: var(--background-primary-hover);
         }
@@ -34,6 +39,7 @@
         svg {
             width: 20px;
             height: 20px;
+            color: var(--foreground-primary);
         }
     }
 

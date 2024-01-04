@@ -1,6 +1,7 @@
 .SelectTrigger {
     display: inline-flex;
     height: 44px;
+    min-height: 44px;
     min-width: 220px;
     border: 1px solid var(--border-neutral);
     align-items: center;
