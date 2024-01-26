@@ -24,6 +24,23 @@
             background-color: var(--background-primary-hover);
         }
     }
+    &[data-state="checked"][disabled],
+    &[disabled] {
+        background-color: var(--background-neutral-disabled);
+        color: var(--foreground-neutral-disabled);
+        border-color: var(--border-neutral-disabled);
+        .CheckboxIndicator {
+            svg {
+                color: var(--foreground-neutral-disabled);
+            }
+        }
+        &:hover {
+            background-color: var(--background-neutral-disabled);
+        }
+        & + .Label {
+            color: var(--foreground-neutral-disabled);
+        }
+    }
     .CheckboxRoot:focus {
         box-shadow:
             0px 0px 0px 2px var(--focus-inner),

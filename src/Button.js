@@ -1,6 +1,7 @@
 import React from "react";
 import "./Button.scss";
 import Badge from "./Badge";
+import Spinner from "./Spinner";
 
 const Button = React.forwardRef(
   (
@@ -14,6 +15,7 @@ const Button = React.forwardRef(
       onDrop,
       children,
       fluid,
+      isLoading,
       ...props
     },
     ref
@@ -29,9 +31,9 @@ const Button = React.forwardRef(
         className={`button ${sizeClass} ${styleClass} ${fluidClass}`}
         onClick={onClick}
         onDrop={onDrop}
-        disabled={disabled}
+        disabled={disabled || isLoading}
       >
-        {children}
+        {isLoading ? <Spinner /> : children}
         {showBadge && <Badge label={badgeLabel} />}
       </button>
     );

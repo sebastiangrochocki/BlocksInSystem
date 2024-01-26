@@ -19,4 +19,5 @@ export { default as BadgeLevel } from "./BadgeLevel";
 export { default as TextArea } from "./TextArea";
 export { default as TopBanner } from "./TopBanner";
 export { default as Loader } from "./Loader";
+export { default as Spinner } from "./Spinner";
 export { default as Styles } from "./Variables.scss";

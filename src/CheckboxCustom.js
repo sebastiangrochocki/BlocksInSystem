@@ -4,7 +4,13 @@ import { CheckIcon } from "@radix-ui/react-icons";
 import Flex from "./Flex";
 import "./CheckboxCustom.scss";
 
-const CheckboxCustom = ({ customID, children, checked, onChange }) => (
+const CheckboxCustom = ({
+  customID,
+  children,
+  checked,
+  onChange,
+  disabled,
+}) => (
   <Flex align={"center"} gap={100}>
     <Checkbox.Root
       className="CheckboxRoot"
@@ -12,6 +18,7 @@ const CheckboxCustom = ({ customID, children, checked, onChange }) => (
       id={customID}
       checked={checked}
       onCheckedChange={onChange}
+      disabled={disabled}
     >
       <Checkbox.Indicator className="CheckboxIndicator">
         <CheckIcon />

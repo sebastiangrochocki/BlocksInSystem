@@ -14,6 +14,7 @@ const Input = ({
   disabled,
   onClick,
   validation,
+  name,
   // hideLabel = false,
 }) => {
   const isSearchInput = type === "search";
@@ -32,6 +33,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         onClick={onClick}
+        name={name}
       />
       {type !== "number" && <label>{label}</label>}
       {errormsg !== false && <p>{errormsg}</p>}
