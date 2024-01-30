@@ -1,7 +1,9 @@
 # BlocksInSystem
+
 ![BlocksIn Design System Logo](https://sebikostudio.com/utils/blocks-in-system-logo.svg)
 
 ### Table of Contents
+
 1. [Avatar Component](#avatar-component)
 2. [Badge Component](#badge-component)
 3. [BadgeLevel Component](#badgelevel-component)
@@ -12,7 +14,7 @@
 8. [Flex Component](#flex-component)
 9. [Heading Component](#heading-component)
 10. [IconButton Component](#iconbutton-component)
-11. [IframeComponent](#iframecomponent)
+11. [Iframe Component](#iframe-component)
 12. [Input Component](#input-component)
 13. [Loader Component](#loader-component)
 14. [Paragraph Component](#paragraph-component)
@@ -21,7 +23,19 @@
 17. [TextArea Component](#textarea-component)
 18. [TopBanner Component](#topbanner-component)
 19. [UserListItem Component](#userlistitem-component)
-20. [YoutubeVideo Component](#youtubevideo-component)
+20. [Youtube Component](#youtube-component)
+21. [Separator Component](#separator-component)
+
+## Introduction
+
+Welcome to BlocksIn System, a custom React component library designed to extend the functionalities of the Radix component library. This library offers a range of components, from basic UI elements to complex functionalities, tailored for developers looking to streamline their React application development.
+
+To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans' for body text and 'Darker Grotesque' for accent fonts. Add these fonts to your application by declaring the following variables in your main `app.css` file:
+
+```css
+--font-body: "Open Sans";
+--font-accent: "Darker Grotesque";
+```
 
 ## Avatar Component
 
@@ -31,31 +45,34 @@
 
 ### Properties
 
-- **avatar**: *String* (optional)
-   - The URL or path of the avatar image.
-   - If not provided, a random avatar from demo images is used.
+- **avatar**: _String_ (optional)
 
-- **altText**: *String* (optional)
-   - Alternative text for the avatar image for accessibility purposes.
-   - Defaults to "Avatar" if not provided.
+  - The URL or path of the avatar image.
+  - If not provided, a random avatar from demo images is used.
 
-- **role**: *String* (optional)
-   - The role or title associated with the user.
-   - Displayed in the tooltip alongside the `altText`.
+- **altText**: _String_ (optional)
+
+  - Alternative text for the avatar image for accessibility purposes.
+  - Defaults to "Avatar" if not provided.
+
+- **role**: _String_ (optional)
+  - The role or title associated with the user.
+  - Displayed in the tooltip alongside the `altText`.
 
 ### Usage
 
 Here is an example of how to use the `Avatar` component:
 
 ```jsx
-import Avatar from './path/to/Avatar';
+import Avatar from "./path/to/Avatar";
 
 <Avatar
   avatar="/path/to/image.jpg"
   altText="John Doe"
   role="Software Engineer"
-/>
+/>;
 ```
+
 ## Badge Component
 
 ### Overview
@@ -64,18 +81,19 @@ The `Badge` component is a simple React component used to display a small badge,
 
 ### Properties
 
-- **label**: *String* (required)
-   - The text to be displayed inside the badge.
+- **label**: _String_ (required)
+  - The text to be displayed inside the badge.
 
 ### Usage
 
 Here's an example of how to use the `Badge` component:
 
 ```jsx
-import Badge from './path/to/Badge';
+import Badge from "./path/to/Badge";
 
-<Badge label="New" />
+<Badge label="New" />;
 ```
+
 ## BadgeLevel Component
 
 ### Overview
@@ -84,19 +102,20 @@ The `BadgeLevel` component is a React component designed to display a badge leve
 
 ### Properties
 
-- **badge**: *Number* (optional)
-   - Represents the badge level to be displayed.
-   - Defaults to 1 if not provided.
+- **badge**: _Number_ (optional)
+  - Represents the badge level to be displayed.
+  - Defaults to 1 if not provided.
 
 ### Usage
 
 Here's an example of how to use the `BadgeLevel` component:
 
 ```jsx
-import BadgeLevel from './path/to/BadgeLevel';
+import BadgeLevel from "./path/to/BadgeLevel";
 
-<BadgeLevel badge={3} />
+<BadgeLevel badge={3} />;
 ```
+
 ## Button Component
 
 ### Overview
@@ -105,48 +124,57 @@ The `Button` component is a versatile and customizable button for React applicat
 
 ### Properties
 
-- **disabled**: *Boolean* (optional)
-   - Disables the button when `true`.
-   - Default is `false`.
+- **disabled**: _Boolean_ (optional)
 
-- **showBadge**: *Boolean* (optional)
-   - Shows a badge on the button when `true`.
-   - Default is `false`.
+  - Disables the button when `true`.
+  - Default is `false`.
 
-- **badgeLabel**: *String* (optional)
-   - The text to be displayed inside the badge.
+- **showBadge**: _Boolean_ (optional)
 
-- **size**: *String* (optional)
-   - Sets the size of the button (`small`, `medium`, `large`).
-   - Default is `medium`.
+  - Shows a badge on the button when `true`.
+  - Default is `false`.
 
-- **variant**: *String* (optional)
-   - Sets the button's style variant (`solid`, `outline`, etc.).
-   - Default is `solid`.
+- **badgeLabel**: _String_ (optional)
 
-- **onClick**: *Function* (optional)
-   - Callback function to be called when the button is clicked.
+  - The text to be displayed inside the badge.
 
-- **onDrop**: *Function* (optional)
-   - Callback function to be called on drop event.
+- **size**: _String_ (optional)
 
-- **fluid**: *Boolean* (optional)
-   - If `true`, the button takes the full width of its container.
-   - Default is `false`.
+  - Sets the size of the button (`small`, `medium`, `large`).
+  - Default is `medium`.
 
-- **isLoading**: *Boolean* (optional)
-   - Shows a loading spinner and disables the button when `true`.
-   - Default is `false`.
+- **variant**: _String_ (optional)
 
-- **children**: *Node* (optional)
-   - The content to be displayed inside the button.
+  - Sets the button's style variant (`solid`, `outline`, etc.).
+  - Default is `solid`.
+
+- **onClick**: _Function_ (optional)
+
+  - Callback function to be called when the button is clicked.
+
+- **onDrop**: _Function_ (optional)
+
+  - Callback function to be called on drop event.
+
+- **fluid**: _Boolean_ (optional)
+
+  - If `true`, the button takes the full width of its container.
+  - Default is `false`.
+
+- **isLoading**: _Boolean_ (optional)
+
+  - Shows a loading spinner and disables the button when `true`.
+  - Default is `false`.
+
+- **children**: _Node_ (optional)
+  - The content to be displayed inside the button.
 
 ### Usage
 
 Here's an example of how to use the `Button` component:
 
 ```jsx
-import Button from './path/to/Button';
+import Button from "./path/to/Button";
 
 <Button
   onClick={handleClick}
@@ -156,8 +184,9 @@ import Button from './path/to/Button';
   badgeLabel="New"
 >
   Click Me
-</Button>
+</Button>;
 ```
+
 ## CheckboxCustom Component
 
 ### Overview
@@ -166,34 +195,39 @@ import Button from './path/to/Button';
 
 ### Properties
 
-- **customID**: *String* (required)
-   - A unique identifier for the checkbox. It is used to associate the checkbox with its label.
+- **customID**: _String_ (required)
 
-- **children**: *Node* (optional)
-   - The content to be displayed alongside the checkbox. Typically used for the label text.
+  - A unique identifier for the checkbox. It is used to associate the checkbox with its label.
 
-- **checked**: *Boolean* (optional)
-   - Determines whether the checkbox is checked.
-   - Default is `false`.
+- **children**: _Node_ (optional)
 
-- **onChange**: *Function* (optional)
-   - Callback function that is called when the checkbox's checked state changes.
+  - The content to be displayed alongside the checkbox. Typically used for the label text.
 
-- **disabled**: *Boolean* (optional)
-   - Disables the checkbox when set to `true`.
-   - Default is `false`.
+- **checked**: _Boolean_ (optional)
+
+  - Determines whether the checkbox is checked.
+  - Default is `false`.
+
+- **onChange**: _Function_ (optional)
+
+  - Callback function that is called when the checkbox's checked state changes.
+
+- **disabled**: _Boolean_ (optional)
+  - Disables the checkbox when set to `true`.
+  - Default is `false`.
 
 ### Usage
 
 Here's an example of how to use the `CheckboxCustom` component:
 
 ```jsx
-import CheckboxCustom from './path/to/CheckboxCustom';
+import CheckboxCustom from "./path/to/CheckboxCustom";
 
 <CheckboxCustom customID="agreeTerms" onChange={handleCheckboxChange}>
   I agree to the terms and conditions
-</CheckboxCustom>
+</CheckboxCustom>;
 ```
+
 ## CodeHighlight Component
 
 ### Overview
@@ -202,18 +236,19 @@ import CheckboxCustom from './path/to/CheckboxCustom';
 
 ### Properties
 
-- **text**: *String* (required)
-   - The code text to be displayed within the component.
+- **text**: _String_ (required)
+  - The code text to be displayed within the component.
 
 ### Usage
 
 Here's an example of how to use the `CodeHighlight` component:
 
 ```jsx
-import CodeHighlight from './path/to/CodeHighlight';
+import CodeHighlight from "./path/to/CodeHighlight";
 
-<CodeHighlight text={`const greeting = "Hello, world!";`} />
+<CodeHighlight text={`const greeting = "Hello, world!";`} />;
 ```
+
 ## CustomToast Component
 
 ### Overview
@@ -222,36 +257,43 @@ import CodeHighlight from './path/to/CodeHighlight';
 
 ### Properties
 
-- **showToast**: *Boolean* (required)
-   - Controls the visibility of the toast. When `true`, the toast is shown.
+- **showToast**: _Boolean_ (required)
 
-- **setShowToast**: *Function* (required)
-   - A callback function to update the `showToast` state.
+  - Controls the visibility of the toast. When `true`, the toast is shown.
 
-- **headline**: *String* (optional)
-   - The headline or title text of the toast.
+- **setShowToast**: _Function_ (required)
 
-- **text**: *String* (required)
-   - The main content text of the toast.
+  - A callback function to update the `showToast` state.
 
-- **time**: *Number* (required)
-   - The duration (in milliseconds) for which the toast is displayed.
+- **headline**: _String_ (optional)
 
-- **showAgain**: *Boolean* (optional)
-   - When `true`, displays a 'Don't Show Again' button.
+  - The headline or title text of the toast.
 
-- **onDismissForever**: *Function* (optional)
-   - A callback function triggered when the 'Don't Show Again' button is clicked.
+- **text**: _String_ (required)
 
-- **simple**: *Boolean* (optional)
-   - If `true`, displays the toast in a simple style without a headline.
+  - The main content text of the toast.
+
+- **time**: _Number_ (required)
+
+  - The duration (in milliseconds) for which the toast is displayed.
+
+- **showAgain**: _Boolean_ (optional)
+
+  - When `true`, displays a 'Don't Show Again' button.
+
+- **onDismissForever**: _Function_ (optional)
+
+  - A callback function triggered when the 'Don't Show Again' button is clicked.
+
+- **simple**: _Boolean_ (optional)
+  - If `true`, displays the toast in a simple style without a headline.
 
 ### Usage
 
 Here's an example of how to use the `CustomToast` component:
 
 ```jsx
-import CustomToast from './path/to/CustomToast';
+import CustomToast from "./path/to/CustomToast";
 
 <CustomToast
   showToast={showToastState}
@@ -261,8 +303,9 @@ import CustomToast from './path/to/CustomToast';
   time={3000}
   showAgain={true}
   onDismissForever={handleDismissForever}
-/>
+/>;
 ```
+
 ## Flex Component
 
 ### Overview
@@ -271,47 +314,56 @@ The `Flex` component is a React utility component designed to streamline the usa
 
 ### Properties
 
-- **children**: *Node* (required)
-   - The child elements to be rendered inside the flex container.
+- **children**: _Node_ (required)
 
-- **direction**: *String* (optional)
-   - Specifies the flex direction (`row`, `column`, etc.).
-   - Default is `row`.
+  - The child elements to be rendered inside the flex container.
 
-- **gap**: *Number* (optional)
-   - The space between the child elements (in pixels).
+- **direction**: _String_ (optional)
 
-- **style**: *Object* (optional)
-   - Custom inline styles to be applied to the flex container.
+  - Specifies the flex direction (`row`, `column`, etc.).
+  - Default is `row`.
 
-- **align**: *String* (optional)
-   - Aligns items along the cross axis (`center`, `flex-start`, `flex-end`, etc.).
+- **gap**: _Number_ (optional)
 
-- **justify**: *String* (optional)
-   - Justifies items along the main axis (`center`, `space-between`, `space-around`, etc.).
+  - The space between the child elements (in pixels).
 
-- **id**: *String* (optional)
-   - The ID attribute of the flex container.
+- **style**: _Object_ (optional)
 
-- **customClass**: *String* (optional)
-   - Additional custom CSS class names to be applied.
+  - Custom inline styles to be applied to the flex container.
 
-- **onClick**: *Function* (optional)
-   - Callback function to be called when the flex container is clicked.
+- **align**: _String_ (optional)
+
+  - Aligns items along the cross axis (`center`, `flex-start`, `flex-end`, etc.).
+
+- **justify**: _String_ (optional)
+
+  - Justifies items along the main axis (`center`, `space-between`, `space-around`, etc.).
+
+- **id**: _String_ (optional)
+
+  - The ID attribute of the flex container.
+
+- **customClass**: _String_ (optional)
+
+  - Additional custom CSS class names to be applied.
+
+- **onClick**: _Function_ (optional)
+  - Callback function to be called when the flex container is clicked.
 
 ### Usage
 
 Here's an example of how to use the `Flex` component:
 
 ```jsx
-import Flex from './path/to/Flex';
+import Flex from "./path/to/Flex";
 
 <Flex direction="column" align="center" justify="space-between" gap={10}>
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
-</Flex>
+</Flex>;
 ```
+
 ## Heading Component
 
 ### Overview
@@ -320,29 +372,32 @@ The `Heading` component is a versatile React component for rendering heading tex
 
 ### Properties
 
-- **level**: *Number* (optional)
-   - Specifies the heading level (1 through 6).
-   - Corresponds to HTML heading tags (`h1`, `h2`, `h3`, etc.).
-   - Default is `1`.
+- **level**: _Number_ (optional)
 
-- **weight**: *String* (optional)
-   - Sets the font weight of the heading (`regular`, `bold`, etc.).
-   - Default is `regular`.
+  - Specifies the heading level (1 through 6).
+  - Corresponds to HTML heading tags (`h1`, `h2`, `h3`, etc.).
+  - Default is `1`.
 
-- **children**: *Node* (required)
-   - The content to be displayed inside the heading tag.
+- **weight**: _String_ (optional)
+
+  - Sets the font weight of the heading (`regular`, `bold`, etc.).
+  - Default is `regular`.
+
+- **children**: _Node_ (required)
+  - The content to be displayed inside the heading tag.
 
 ### Usage
 
 Here's an example of how to use the `Heading` component:
 
 ```jsx
-import Heading from './path/to/Heading';
+import Heading from "./path/to/Heading";
 
 <Heading level={2} weight="bold">
   Your Main Title Here
-</Heading>
+</Heading>;
 ```
+
 ## IconButton Component
 
 ### Overview
@@ -351,67 +406,72 @@ The `IconButton` component is a React component designed for creating icon-based
 
 ### Properties
 
-- **size**: *String* (optional)
-   - Specifies the size of the icon button (`small`, `medium`, `large`).
-   - Default is `medium`.
+- **size**: _String_ (optional)
 
-- **variant**: *String* (optional)
-   - Sets the button's style variant (`solid`, `outline`, etc.).
-   - Default is `solid`.
+  - Specifies the size of the icon button (`small`, `medium`, `large`).
+  - Default is `medium`.
 
-- **onClick**: *Function* (optional)
-   - Callback function to be called when the button is clicked.
+- **variant**: _String_ (optional)
 
-- **children**: *Node* (required)
-   - The icon to be displayed inside the button.
+  - Sets the button's style variant (`solid`, `outline`, etc.).
+  - Default is `solid`.
 
-- **showBadge**: *Boolean* (optional)
-   - Shows a badge on the button when `true`.
-   - Default is `false`.
+- **onClick**: _Function_ (optional)
 
-- **badgeLabel**: *String* (optional)
-   - The text to be displayed inside the badge.
+  - Callback function to be called when the button is clicked.
+
+- **children**: _Node_ (required)
+
+  - The icon to be displayed inside the button.
+
+- **showBadge**: _Boolean_ (optional)
+
+  - Shows a badge on the button when `true`.
+  - Default is `false`.
+
+- **badgeLabel**: _String_ (optional)
+  - The text to be displayed inside the badge.
 
 ### Usage
 
 Here's an example of how to use the `IconButton` component:
 
 ```jsx
-import IconButton from './path/to/IconButton';
-import { YourIconComponent } from 'your-icon-library';
+import IconButton from "./path/to/IconButton";
+import { YourIconComponent } from "your-icon-library";
 
 <IconButton onClick={handleClick} size="large" variant="outline">
   <YourIconComponent />
-</IconButton>
+</IconButton>;
 ```
-## IframeComponent
+
+## Iframe Component
 
 ### Overview
 
-`IframeComponent` is a React component designed to embed an iframe within your application. It's ideal for integrating external web content, such as videos, web pages, or other resources that support iframe embedding. Additionally, this component offers a fallback display for Figma integration when no URL is provided.
+`Iframe` is a React component designed to embed an iframe within your application. It's ideal for integrating external web content, such as videos, web pages, or other resources that support iframe embedding. Additionally, this component offers a fallback display for Figma integration when no URL is provided.
 
 ### Properties
 
-- **url**: *String* (optional)
-   - The URL of the web page or resource to be embedded in the iframe.
-   - If not provided, a default Figma integration message is displayed.
+- **url**: _String_ (optional)
 
-- **title**: *String* (optional)
-   - A descriptive title for the iframe, which is useful for accessibility.
-   - Default is `"Iframe Title"`.
+  - The URL of the web page or resource to be embedded in the iframe.
+  - If not provided, a default Figma integration message is displayed.
+
+- **title**: _String_ (optional)
+  - A descriptive title for the iframe, which is useful for accessibility.
+  - Default is `"Iframe Title"`.
 
 ### Usage
 
-Here's an example of how to use the `IframeComponent`:
+Here's an example of how to use the `Iframe`:
 
 ```jsx
-import IframeComponent from './path/to/IframeComponent';
+import Iframe from "./path/to/Iframe";
 
-<IframeComponent
-  url="https://example.com"
-  title="Embedded Content"
-/>
+<Iframe url="https://example.com" title="Embedded Content" />;
 ```
+
 ## Input Component
 
 ### Overview
@@ -420,53 +480,64 @@ import IframeComponent from './path/to/IframeComponent';
 
 ### Properties
 
-- **pattern**: *String* (optional)
-   - A regular expression pattern that the input's value must match.
+- **pattern**: _String_ (optional)
 
-- **label**: *String* (optional)
-   - The label text displayed alongside the input field.
-   - Default is `"First name"`.
+  - A regular expression pattern that the input's value must match.
 
-- **placeholder**: *String* (optional)
-   - The placeholder text displayed inside the input field.
-   - Default is `"Enter first name"`.
+- **label**: _String_ (optional)
 
-- **errormsg**: *String* | *Boolean* (optional)
-   - The error message to display when the input's value is invalid.
-   - Set to `false` to hide the error message.
-   - Default is `"Invalid format."`.
+  - The label text displayed alongside the input field.
+  - Default is `"First name"`.
 
-- **type**: *String* (optional)
-   - The type of the input (`text`, `search`, `number`, `date`, etc.).
-   - Default is `"text"`.
+- **placeholder**: _String_ (optional)
 
-- **value**: *String* (required)
-   - The current value of the input.
+  - The placeholder text displayed inside the input field.
+  - Default is `"Enter first name"`.
 
-- **onChange**: *Function* (required)
-   - Callback function to handle changes to the input's value.
+- **errormsg**: _String_ | _Boolean_ (optional)
 
-- **className**: *String* (optional)
-   - Additional custom CSS class names to be applied.
+  - The error message to display when the input's value is invalid.
+  - Set to `false` to hide the error message.
+  - Default is `"Invalid format."`.
 
-- **disabled**: *Boolean* (optional)
-   - Disables the input field when set to `true`.
+- **type**: _String_ (optional)
 
-- **onClick**: *Function* (optional)
-   - Callback function to be called when the input field is clicked.
+  - The type of the input (`text`, `search`, `number`, `date`, etc.).
+  - Default is `"text"`.
 
-- **validation**: *Boolean* (optional)
-   - Enables validation display for the input field.
+- **value**: _String_ (required)
 
-- **name**: *String* (optional)
-   - The name attribute of the input field.
+  - The current value of the input.
+
+- **onChange**: _Function_ (required)
+
+  - Callback function to handle changes to the input's value.
+
+- **className**: _String_ (optional)
+
+  - Additional custom CSS class names to be applied.
+
+- **disabled**: _Boolean_ (optional)
+
+  - Disables the input field when set to `true`.
+
+- **onClick**: _Function_ (optional)
+
+  - Callback function to be called when the input field is clicked.
+
+- **validation**: _Boolean_ (optional)
+
+  - Enables validation display for the input field.
+
+- **name**: _String_ (optional)
+  - The name attribute of the input field.
 
 ### Usage
 
 Here's an example of how to use the `Input` component:
 
 ```jsx
-import Input from './path/to/Input';
+import Input from "./path/to/Input";
 
 <Input
   label="Email Address"
@@ -474,8 +545,9 @@ import Input from './path/to/Input';
   type="email"
   value={email}
   onChange={handleEmailChange}
-/>
+/>;
 ```
+
 ## Loader Component
 
 ### Overview
@@ -491,10 +563,11 @@ The `Loader` component is a React component that displays an animated loading in
 The component does not accept any props and is used simply by rendering it where a loading indicator is needed:
 
 ```jsx
-import Loader from './path/to/Loader';
+import Loader from "./path/to/Loader";
 
-<Loader />
+<Loader />;
 ```
+
 ## Paragraph Component
 
 ### Overview
@@ -503,31 +576,35 @@ The `Paragraph` component is a React component for rendering text content. It pr
 
 ### Properties
 
-- **customClass**: *String* (optional)
-   - Additional custom CSS class names to be applied to the paragraph.
+- **customClass**: _String_ (optional)
 
-- **size**: *String* (optional)
-   - Specifies the size of the text (`small`, `medium`, `large`, etc.).
-   - Default is `medium`.
+  - Additional custom CSS class names to be applied to the paragraph.
 
-- **weight**: *String* (optional)
-   - Sets the font weight of the text (`regular`, `bold`, etc.).
-   - Default is `regular`.
+- **size**: _String_ (optional)
 
-- **children**: *Node* (required)
-   - The text content to be displayed inside the paragraph.
+  - Specifies the size of the text (`small`, `medium`, `large`, etc.).
+  - Default is `medium`.
+
+- **weight**: _String_ (optional)
+
+  - Sets the font weight of the text (`regular`, `bold`, etc.).
+  - Default is `regular`.
+
+- **children**: _Node_ (required)
+  - The text content to be displayed inside the paragraph.
 
 ### Usage
 
 Here's an example of how to use the `Paragraph` component:
 
 ```jsx
-import Paragraph from './path/to/Paragraph';
+import Paragraph from "./path/to/Paragraph";
 
 <Paragraph size="large" weight="bold">
   This is a large, bold paragraph.
-</Paragraph>
+</Paragraph>;
 ```
+
 ## Spinner Component
 
 ### Overview
@@ -543,10 +620,11 @@ The `Spinner` component is a React component designed to display an animated spi
 The component does not accept any props and is used simply by rendering it where an animated spinner is needed:
 
 ```jsx
-import Spinner from './path/to/Spinner';
+import Spinner from "./path/to/Spinner";
 
-<Spinner />
+<Spinner />;
 ```
+
 ## Tag Component
 
 ### Overview
@@ -555,22 +633,24 @@ The `Tag` component is a simple yet versatile React component used for displayin
 
 ### Properties
 
-- **text**: *String* (required)
-   - The text content to be displayed inside the tag.
+- **text**: _String_ (required)
 
-- **variant**: *String* (optional)
-   - The visual style variant of the tag (`Normal`, `Highlighted`, etc.).
-   - Default is `"Normal"`.
+  - The text content to be displayed inside the tag.
+
+- **variant**: _String_ (optional)
+  - The visual style variant of the tag (`Normal`, `Highlighted`, etc.).
+  - Default is `"Normal"`.
 
 ### Usage
 
 Here's an example of how to use the `Tag` component:
 
 ```jsx
-import Tag from './path/to/Tag';
+import Tag from "./path/to/Tag";
 
-<Tag text="Technology" variant="Highlighted" />
+<Tag text="Technology" variant="Highlighted" />;
 ```
+
 ## TextArea Component
 
 ### Overview
@@ -579,40 +659,46 @@ The `TextArea` component is a React component that renders a multi-line text inp
 
 ### Properties
 
-- **label**: *String* (optional)
-   - The label text displayed above the textarea.
-   - Default is `"Your Label"`.
+- **label**: _String_ (optional)
 
-- **placeholder**: *String* (optional)
-   - The placeholder text displayed inside the textarea when it's empty.
-   - Default is `"Enter your text"`.
+  - The label text displayed above the textarea.
+  - Default is `"Your Label"`.
 
-- **value**: *String* (required)
-   - The current value of the textarea.
+- **placeholder**: _String_ (optional)
 
-- **onChange**: *Function* (required)
-   - Callback function that is called when the value of the textarea changes.
+  - The placeholder text displayed inside the textarea when it's empty.
+  - Default is `"Enter your text"`.
 
-- **className**: *String* (optional)
-   - Additional custom CSS class names to be applied.
+- **value**: _String_ (required)
 
-- **disabled**: *Boolean* (optional)
-   - Disables the textarea when set to `true`.
+  - The current value of the textarea.
+
+- **onChange**: _Function_ (required)
+
+  - Callback function that is called when the value of the textarea changes.
+
+- **className**: _String_ (optional)
+
+  - Additional custom CSS class names to be applied.
+
+- **disabled**: _Boolean_ (optional)
+  - Disables the textarea when set to `true`.
 
 ### Usage
 
 Here's an example of how to use the `TextArea` component:
 
 ```jsx
-import TextArea from './path/to/TextArea';
+import TextArea from "./path/to/TextArea";
 
 <TextArea
   label="Message"
   placeholder="Type your message here"
   value={message}
   onChange={handleMessageChange}
-/>
+/>;
 ```
+
 ## TopBanner Component
 
 ### Overview
@@ -621,36 +707,38 @@ The `TopBanner` component is a React component designed to display notification 
 
 ### Properties
 
-- **username**: *String* (required)
-   - The username of the currently logged-in user, used for tracking dismissed notifications.
+- **username**: _String_ (required)
 
-- **notifications**: *Array* (required)
-   - An array of notification objects. Each object should contain `title`, `text`, `id`, and `style`.
+  - The username of the currently logged-in user, used for tracking dismissed notifications.
+
+- **notifications**: _Array_ (required)
+  - An array of notification objects. Each object should contain `title`, `text`, `id`, and `style`.
 
 ### Usage
 
 Here's an example of how to use the `TopBanner` component:
 
 ```jsx
-import TopBanner from './path/to/TopBanner';
+import TopBanner from "./path/to/TopBanner";
 
 const notifications = [
-    {
-        "title": "Community is live!",
-        "text": "Now you can browse through templates.",
-        "id": "1212121214",
-        "style": "info"
-    },
-    {
-        "title": "New Navigation",
-        "text": "New release comes with the brand new LeftSide Panel navigation.",
-        "id": "1212121212",
-        "style": "info"
-    }
+  {
+    title: "Community is live!",
+    text: "Now you can browse through templates.",
+    id: "1212121214",
+    style: "info",
+  },
+  {
+    title: "New Navigation",
+    text: "New release comes with the brand new LeftSide Panel navigation.",
+    id: "1212121212",
+    style: "info",
+  },
 ];
 
-<TopBanner username="johndoe" notifications={notifications} />
+<TopBanner username="johndoe" notifications={notifications} />;
 ```
+
 ## UserListItem Component
 
 ### Overview
@@ -659,49 +747,69 @@ const notifications = [
 
 ### Properties
 
-- **name**: *String* (required)
-   - The name of the user to be displayed.
+- **name**: _String_ (required)
 
-- **badge**: *Number* (required)
-   - The badge level of the user, represented numerically.
+  - The name of the user to be displayed.
 
-- **avatar**: *String* (optional)
-   - The URL or path to the user's avatar image.
+- **badge**: _Number_ (required)
 
-- **role**: *String* (optional)
-   - The role or title of the user.
+  - The badge level of the user, represented numerically.
+
+- **avatar**: _String_ (optional)
+
+  - The URL or path to the user's avatar image.
+
+- **role**: _String_ (optional)
+  - The role or title of the user.
 
 ### Usage
 
 Here's an example of how to use the `UserListItem` component:
 
 ```jsx
-import UserListItem from './path/to/UserListItem';
+import UserListItem from "./path/to/UserListItem";
 
 <UserListItem
   name="John Doe"
   badge={3}
   avatar="/path/to/avatar.jpg"
   role="Developer"
-/>
+/>;
 ```
-## YoutubeVideo Component
+
+## Youtube Component
 
 ### Overview
 
-The `YoutubeVideo` component is a React component for embedding YouTube videos in your application. It allows for seamless integration of YouTube content by simply providing the video ID.
+The `Youtube` component is a React component for embedding YouTube videos in your application. It allows for seamless integration of YouTube content by simply providing the video ID.
 
 ### Properties
 
-- **videoId**: *String* (required)
-   - The unique identifier (ID) of the YouTube video to be embedded.
+- **videoId**: _String_ (required)
+  - The unique identifier (ID) of the YouTube video to be embedded.
 
 ### Usage
 
-Here's an example of how to use the `YoutubeVideo` component:
+Here's an example of how to use the `Youtube` component:
 
 ```jsx
-import YoutubeVideo from './path/to/YoutubeVideo';
+import YoutubeVideo from "./path/to/Youtube";
 
-<YoutubeVideo videoId="dQw4w9WgXcQ" />
+<Youtube videoId="dQw4w9WgXcQ" />;
+```
+
+## Separator Component
+
+### Overview
+
+`Separator` is a simple React component designed to visually divide content within layouts. It renders as a horizontal line, helping to organize and separate different sections or elements on a page.
+
+### Usage
+
+Here's an example of how to use the `Separator` component:
+
+```jsx
+import Separator from "./path/to/Separator";
+
+<Separator />;
 ```
