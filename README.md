@@ -22,9 +22,10 @@
 16. [Tag Component](#tag-component)
 17. [TextArea Component](#textarea-component)
 18. [TopBanner Component](#topbanner-component)
-19. [UserListItem Component](#userlistitem-component)
-20. [Youtube Component](#youtube-component)
-21. [Separator Component](#separator-component)
+19. [UserOnHoldItem Component](#useronholditem-component)
+20. [UserListItem Component](#userlistitem-component)
+21. [Youtube Component](#youtube-component)
+22. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -348,7 +349,16 @@ The `Flex` component is a React utility component designed to streamline the usa
   - Additional custom CSS class names to be applied.
 
 - **onClick**: _Function_ (optional)
+
   - Callback function to be called when the flex container is clicked.
+
+- **wrap**: _String_ (optional)
+
+  - Allows flex items to wrap as needed (wrap, nowrap, wrapreverse).
+
+- **fluid**: _Boolean_ (optional)
+
+  - If true, the container will take up all available space.
 
 ### Usage
 
@@ -405,6 +415,16 @@ import Heading from "./path/to/Heading";
 The `IconButton` component is a React component designed for creating icon-based buttons. It supports different sizes and styles and can optionally include a badge. The component is styled using SCSS and is ideal for actions that are better represented with icons rather than text.
 
 ### Properties
+
+- **disabled**: _Boolean_ (optional)
+
+  - Disables the button when `true`.
+  - Default is `false`.
+
+- **isLoading**: _Boolean_ (optional)
+
+  - Shows a loading spinner and disables the button when `true`.
+  - Default is `false`.
 
 - **size**: _String_ (optional)
 
@@ -739,6 +759,60 @@ const notifications = [
 <TopBanner username="johndoe" notifications={notifications} />;
 ```
 
+## UserOnHoldItem Component
+
+The `UserOnHoldItem` component is designed to manage user items in a hold or approval state within your application. It displays user information alongside actions to approve, reject, or remove a user, providing a convenient way to handle user management tasks.
+
+### Properties
+
+- **fluid**: _Boolean_ (optional)
+  - If `true`, the component will take the full width of its container. Default is `false`.
+- **user**: _Object_ (required)
+  - An object representing the user. Should include `firstName`, `email`, `avatar`, `role`, and `isApproved` properties.
+- **onApprove**: _Function_ (required)
+  - Callback function called when the "Approve" button is clicked. Receives the `user` object as an argument.
+- **onReject**: _Function_ (required)
+  - Callback function called when the "Reject" button is clicked. Receives the `user` object as an argument.
+- **onRemove**: _Function_ (required)
+  - Callback function called when the "Remove User" button is clicked. Receives the `user` object as an argument.
+
+### Usage
+
+Here's how you can use the `UserOnHoldItem` component within your application:
+
+```jsx
+import UserOnHoldItem from "./path/to/UserOnHoldItem";
+import Avatar from "./path/to/Avatar";
+
+const user = {
+  firstName: "Jane Doe",
+  email: "jane.doe@example.com",
+  avatar: "/path/to/avatar.jpg",
+  role: "User",
+  isApproved: false,
+};
+
+function handleApprove(user) {
+  console.log("Approving user:", user);
+}
+
+function handleReject(user) {
+  console.log("Rejecting user:", user);
+}
+
+function handleRemove(user) {
+  console.log("Removing user:", user);
+}
+
+<UserOnHoldItem
+  fluid={true}
+  user={user}
+  onApprove={handleApprove}
+  onReject={handleReject}
+  onRemove={handleRemove}
+/>;
+```
+
 ## UserListItem Component
 
 ### Overview
@@ -804,12 +878,20 @@ import YoutubeVideo from "./path/to/Youtube";
 
 `Separator` is a simple React component designed to visually divide content within layouts. It renders as a horizontal line, helping to organize and separate different sections or elements on a page.
 
+### Properties
+
+- **vertical**: _Boolean_ (optional)
+  - Determines the orientation of the separator. When set to `true`, the separator is displayed vertically. By default, it is rendered horizontally.
+
 ### Usage
 
-Here's an example of how to use the `Separator` component:
+Below are examples illustrating how to use the `Separator` component in both horizontal and vertical orientations.
+
+#### Horizontal Separator
 
 ```jsx
 import Separator from "./path/to/Separator";
 
+// Renders a horizontal separator
 <Separator />;
 ```
