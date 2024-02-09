@@ -19,13 +19,14 @@
 13. [Loader Component](#loader-component)
 14. [Paragraph Component](#paragraph-component)
 15. [Spinner Component](#spinner-component)
-16. [Tag Component](#tag-component)
-17. [TextArea Component](#textarea-component)
-18. [TopBanner Component](#topbanner-component)
-19. [UserOnHoldItem Component](#useronholditem-component)
-20. [UserListItem Component](#userlistitem-component)
-21. [Youtube Component](#youtube-component)
-22. [Separator Component](#separator-component)
+16. [Switch Component](#switch-component)
+17. [Tag Component](#tag-component)
+18. [TextArea Component](#textarea-component)
+19. [TopBanner Component](#topbanner-component)
+20. [UserOnHoldItem Component](#useronholditem-component)
+21. [UserListItem Component](#userlistitem-component)
+22. [Youtube Component](#youtube-component)
+23. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -643,6 +644,51 @@ The component does not accept any props and is used simply by rendering it where
 import Spinner from "./path/to/Spinner";
 
 <Spinner />;
+```
+
+## CustomSwitch Component Documentation
+
+### Overview
+
+The `CustomSwitch` component is a customizable switch control for React applications, leveraging the capabilities of Radix UI's Switch component. It provides the option to include a label and can be used within a `Flex` container for better layout management. This component is suitable for toggling between two states such as enabling/disabling settings or features.
+
+### Properties
+
+- **id** (_String_ - required): A unique identifier for the switch. It associates the switch with its label for accessibility.
+- **checked** (_Boolean_ - required): Indicates the switch's state, either "on" (true) or "off" (false).
+- **onCheckedChange** (_Function_ - required): Callback function triggered when the switch's state changes, receiving the new state as an argument.
+- **children** (_Node_ - optional): Content displayed alongside the switch, typically used as a label. When provided, the switch and label are rendered inside a `Flex` container for layout purposes.
+
+### Styling
+
+The component uses the following CSS classes for styling, which can be customized in the SCSS file:
+
+- `.SwitchRoot`: Applies to the switch control itself.
+- `.SwitchThumb`: Targets the thumb of the switch, the part that moves.
+- `.Label`: Used for the label element when `children` are provided.
+
+Adjust these classes in your SCSS to fit the design of your application.
+
+### Usage Examples
+
+#### With Label
+
+```jsx
+import CustomSwitch from "./path/to/CustomSwitch";
+
+function ExampleWithLabel() {
+  const [isToggled, setIsToggled] = React.useState(false);
+
+  return (
+    <CustomSwitch
+      id="exampleSwitch"
+      checked={isToggled}
+      onCheckedChange={setIsToggled}
+    >
+      Toggle me
+    </CustomSwitch>
+  );
+}
 ```
 
 ## Tag Component
