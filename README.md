@@ -646,7 +646,7 @@ import Spinner from "./path/to/Spinner";
 <Spinner />;
 ```
 
-## CustomSwitch Component Documentation
+## Switch Component
 
 ### Overview
 
