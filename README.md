@@ -168,6 +168,14 @@ The `Button` component is a versatile and customizable button for React applicat
   - Shows a loading spinner and disables the button when `true`.
   - Default is `false`.
 
+- **helper**: _String_ (optional)
+
+  - A helper text to be displayed alongside the button content.
+
+- **iconLeft**: _Component_ (optional)
+
+  - A React component (icon) to be displayed on the left side of the button text.
+
 - **children**: _Node_ (optional)
   - The content to be displayed inside the button.
 
@@ -184,6 +192,25 @@ import Button from "./path/to/Button";
   size="large"
   showBadge
   badgeLabel="New"
+>
+  Click Me
+</Button>;
+```
+
+Here's an example of how to use the helper in component:
+
+```jsx
+import Button from "./path/to/Button";
+import { YourIconComponent } from "your-icon-library";
+
+<Button
+  onClick={handleClick}
+  variant="solid"
+  size="large"
+  showBadge
+  badgeLabel="New"
+  helper="This is a helper text"
+  iconLeft={YourIconComponent}
 >
   Click Me
 </Button>;
