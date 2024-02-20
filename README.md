@@ -422,7 +422,11 @@ The `Heading` component is a versatile React component for rendering heading tex
   - Default is `regular`.
 
 - **children**: _Node_ (required)
+
   - The content to be displayed inside the heading tag.
+
+- **style**: _String_ (optional)
+  - Custom style tag.
 
 ### Usage
 
