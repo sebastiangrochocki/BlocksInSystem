@@ -8,9 +8,9 @@
 2. [Badge Component](#badge-component)
 3. [BadgeLevel Component](#badgelevel-component)
 4. [Button Component](#button-component)
-5. [CheckboxCustom Component](#checkboxcustom-component)
+5. [Checkbox Component](#checkbox-component)
 6. [CodeHighlight Component](#codehighlight-component)
-7. [CustomToast Component](#customtoast-component)
+7. [Toast Component](#toast-component)
 8. [DropdownMenu Component](#dropdownmenu-component)
 9. [Flex Component](#flex-component)
 10. [Heading Component](#heading-component)
@@ -225,11 +225,11 @@ import { YourIconComponent } from "your-icon-library";
 </Button>
 ```
 
-## CheckboxCustom Component
+## Checkbox Component
 
 ### Overview
 
-`CheckboxCustom` is a React component that provides a customized checkbox experience. Built using `@radix-ui/react-checkbox`, this component offers a flexible and accessible way to integrate checkbox functionality into your application, with support for custom styling and additional content.
+`Checkbox` is a React component that provides a customized checkbox experience. Built using `@radix-ui/react-checkbox`, this component offers a flexible and accessible way to integrate checkbox functionality into your application, with support for custom styling and additional content.
 
 ### Properties
 
@@ -260,11 +260,11 @@ import { YourIconComponent } from "your-icon-library";
 Here's an example of how to use the `CheckboxCustom` component:
 
 ```jsx
-import { CheckboxCustom } from "blocksin-system";
+import { Checkbox } from "blocksin-system";
 
-<CheckboxCustom customID="agreeTerms" onChange={handleCheckboxChange}>
+<Checkbox customID="agreeTerms" onChange={handleCheckboxChange}>
   I agree to the terms and conditions
-</CheckboxCustom>
+</Checkbox>
 ```
 
 ## CodeHighlight Component
@@ -289,11 +289,11 @@ import { CodeHighlight } from "blocksin-system";
 <CodeHighlight text={`const greeting = "Hello, world!";`} />
 ```
 
-## CustomToast Component
+## Toast Component
 
 ### Overview
 
-`CustomToast` is a React component built using `@radix-ui/react-toast` that provides a customizable toast notification with an optional progress bar and a 'Don't Show Again' button. It can be used to display brief messages or alerts to users, with a smooth fade-out effect controlled by a timer.
+`Toast` is a React component built using `@radix-ui/react-toast` that provides a customizable toast notification with an optional progress bar and a 'Don't Show Again' button. It can be used to display brief messages or alerts to users, with a smooth fade-out effect controlled by a timer.
 
 ### Properties
 
@@ -334,9 +334,9 @@ import { CodeHighlight } from "blocksin-system";
 Here's an example of how to use the `CustomToast` component:
 
 ```jsx
-import { CustomToast } from "blocksin-system";
+import { Toast } from "blocksin-system";
 
-<CustomToast
+<Toast
   showToast={showToastState}
   setShowToast={setShowToastState}
   headline="Success!"
@@ -742,7 +742,7 @@ import { Spinner } from "blocksin-system";
 
 ### Overview
 
-The `CustomSwitch` component is a customizable switch control for React applications, leveraging the capabilities of Radix UI's Switch component. It provides the option to include a label and can be used within a `Flex` container for better layout management. This component is suitable for toggling between two states such as enabling/disabling settings or features.
+The `Switch` component is a customizable switch control for React applications, leveraging the capabilities of Radix UI's Switch component. It provides the option to include a label and can be used within a `Flex` container for better layout management. This component is suitable for toggling between two states such as enabling/disabling settings or features.
 
 ### Properties
 
@@ -777,19 +777,19 @@ Adjust these classes in your SCSS to fit the design of your application.
 #### With Label
 
 ```jsx
-import { CustomSwitch } from "blocksin-system";
+import { Switch } from "blocksin-system";
 
 function ExampleWithLabel() {
   const [isToggled, setIsToggled] = React.useState(false);
 
   return (
-    <CustomSwitch
+    <Switch
       id="exampleSwitch"
       checked={isToggled}
       onCheckedChange={setIsToggled}
     >
       Toggle me
-    </CustomSwitch>
+    </Switch>
   )
 }
 ```
