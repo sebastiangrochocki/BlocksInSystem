@@ -45,15 +45,73 @@ button {
     border-radius: 4px;
     display: flex;
     align-items: center;
-    height: 32px;
+    height: 40px;
     font-size: 14px;
     color: var(--foreground-neutral);
     position: relative;
-    padding-left: var(--size-300);
+    padding-left: 4px;
     user-select: none;
     outline: none;
     &:focus {
         box-shadow: none;
+    }
+    .RightSlot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 20px;
+        padding-right: 4px;
+        color: var(--black);
+        .RadioButton {
+            width: 16px;
+            height: 16px;
+            border-radius: 20px;
+            border: 1px solid var(--brand-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                display: block;
+                background-color: var(--brand-1);
+            }
+        }
+    }
+    .LeftSlot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        margin-right: 12px;
+        // &:empty {
+        //     width: 0;
+        // }
+        color: var(--black);
+        svg {
+            width: 20px;
+            height: auto;
+            display: block;
+        }
+    }
+}
+.DropdownMenuCheckboxItem[data-state="unchecked"] {
+    .RightSlot {
+        svg {
+            display: none;
+        }
+    }
+}
+.DropdownMenuRadioItem[data-state="unchecked"] {
+    .RightSlot {
+        .RadioButton {
+            border-color: var(--border-neutral-subtle);
+
+            span {
+                display: none;
+            }
+        }
     }
 }
 .DropdownMenuSubTrigger[data-state="open"] {

@@ -11,22 +11,24 @@
 5. [CheckboxCustom Component](#checkboxcustom-component)
 6. [CodeHighlight Component](#codehighlight-component)
 7. [CustomToast Component](#customtoast-component)
-8. [Flex Component](#flex-component)
-9. [Heading Component](#heading-component)
-10. [IconButton Component](#iconbutton-component)
-11. [Iframe Component](#iframe-component)
-12. [Input Component](#input-component)
-13. [Loader Component](#loader-component)
-14. [Paragraph Component](#paragraph-component)
-15. [Spinner Component](#spinner-component)
-16. [Switch Component](#switch-component)
-17. [Tag Component](#tag-component)
-18. [TextArea Component](#textarea-component)
-19. [TopBanner Component](#topbanner-component)
-20. [UserOnHoldItem Component](#useronholditem-component)
-21. [UserListItem Component](#userlistitem-component)
-22. [Youtube Component](#youtube-component)
-23. [Separator Component](#separator-component)
+8. [DropdownMenu Component](#dropdownmenu-component)
+9. [Flex Component](#flex-component)
+10. [Heading Component](#heading-component)
+11. [IconButton Component](#iconbutton-component)
+12. [Iframe Component](#iframe-component)
+13. [Input Component](#input-component)
+14. [Loader Component](#loader-component)
+15. [Paragraph Component](#paragraph-component)
+16. [Spinner Component](#spinner-component)
+17. [Switch Component](#switch-component)
+18. [Tag Component](#tag-component)
+19. [TextArea Component](#textarea-component)
+20. [TopBanner Component](#topbanner-component)
+21. [UserOnHoldItem Component](#useronholditem-component)
+22. [UserListItem Component](#userlistitem-component)
+23. [Youtube Component](#youtube-component)
+24. [Select Component](#select-component)
+25. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -35,8 +37,11 @@ Welcome to BlocksIn System, a custom React component library designed to extend 
 To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans' for body text and 'Darker Grotesque' for accent fonts. Add these fonts to your application by declaring the following variables in your main `app.css` file:
 
 ```css
---font-body: "Open Sans";
---font-accent: "Darker Grotesque";
+--font-body: "OpenSans";
+--font-body-bold: "OpenSans-Bold";
+--font-accent: "DarkerGrotesque";
+--font-accent-bold: "DarkerGrotesque-Bold";
+--font-accent-light: "DarkerGrotesque-Light";
 ```
 
 ## Avatar Component
@@ -58,6 +63,7 @@ To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans'
   - Defaults to "Avatar" if not provided.
 
 - **role**: _String_ (optional)
+
   - The role or title associated with the user.
   - Displayed in the tooltip alongside the `altText`.
 
@@ -66,13 +72,13 @@ To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans'
 Here is an example of how to use the `Avatar` component:
 
 ```jsx
-import Avatar from "./path/to/Avatar";
+import { Avatar } from "blocksin-system";
 
 <Avatar
   avatar="/path/to/image.jpg"
   altText="John Doe"
   role="Software Engineer"
-/>;
+/>
 ```
 
 ## Badge Component
@@ -84,6 +90,7 @@ The `Badge` component is a simple React component used to display a small badge,
 ### Properties
 
 - **label**: _String_ (required)
+
   - The text to be displayed inside the badge.
 
 ### Usage
@@ -91,9 +98,9 @@ The `Badge` component is a simple React component used to display a small badge,
 Here's an example of how to use the `Badge` component:
 
 ```jsx
-import Badge from "./path/to/Badge";
+import { Badge } from "blocksin-system";
 
-<Badge label="New" />;
+<Badge label="New" />
 ```
 
 ## BadgeLevel Component
@@ -105,6 +112,7 @@ The `BadgeLevel` component is a React component designed to display a badge leve
 ### Properties
 
 - **badge**: _Number_ (optional)
+
   - Represents the badge level to be displayed.
   - Defaults to 1 if not provided.
 
@@ -113,9 +121,9 @@ The `BadgeLevel` component is a React component designed to display a badge leve
 Here's an example of how to use the `BadgeLevel` component:
 
 ```jsx
-import BadgeLevel from "./path/to/BadgeLevel";
+import { BadgeLevel } from "blocksin-system";
 
-<BadgeLevel badge={3} />;
+<BadgeLevel badge={3} />
 ```
 
 ## Button Component
@@ -177,6 +185,7 @@ The `Button` component is a versatile and customizable button for React applicat
   - A React component (icon) to be displayed on the left side of the button text.
 
 - **children**: _Node_ (optional)
+
   - The content to be displayed inside the button.
 
 ### Usage
@@ -184,7 +193,7 @@ The `Button` component is a versatile and customizable button for React applicat
 Here's an example of how to use the `Button` component:
 
 ```jsx
-import Button from "./path/to/Button";
+import { Button } from "blocksin-system";
 
 <Button
   onClick={handleClick}
@@ -194,13 +203,13 @@ import Button from "./path/to/Button";
   badgeLabel="New"
 >
   Click Me
-</Button>;
+</Button>
 ```
 
 Here's an example of how to use the helper in component:
 
 ```jsx
-import Button from "./path/to/Button";
+import { Button } from "blocksin-system";
 import { YourIconComponent } from "your-icon-library";
 
 <Button
@@ -213,7 +222,7 @@ import { YourIconComponent } from "your-icon-library";
   iconLeft={YourIconComponent}
 >
   Click Me
-</Button>;
+</Button>
 ```
 
 ## CheckboxCustom Component
@@ -242,6 +251,7 @@ import { YourIconComponent } from "your-icon-library";
   - Callback function that is called when the checkbox's checked state changes.
 
 - **disabled**: _Boolean_ (optional)
+
   - Disables the checkbox when set to `true`.
   - Default is `false`.
 
@@ -250,11 +260,11 @@ import { YourIconComponent } from "your-icon-library";
 Here's an example of how to use the `CheckboxCustom` component:
 
 ```jsx
-import CheckboxCustom from "./path/to/CheckboxCustom";
+import { CheckboxCustom } from "blocksin-system";
 
 <CheckboxCustom customID="agreeTerms" onChange={handleCheckboxChange}>
   I agree to the terms and conditions
-</CheckboxCustom>;
+</CheckboxCustom>
 ```
 
 ## CodeHighlight Component
@@ -266,6 +276,7 @@ import CheckboxCustom from "./path/to/CheckboxCustom";
 ### Properties
 
 - **text**: _String_ (required)
+
   - The code text to be displayed within the component.
 
 ### Usage
@@ -273,9 +284,9 @@ import CheckboxCustom from "./path/to/CheckboxCustom";
 Here's an example of how to use the `CodeHighlight` component:
 
 ```jsx
-import CodeHighlight from "./path/to/CodeHighlight";
+import { CodeHighlight } from "blocksin-system";
 
-<CodeHighlight text={`const greeting = "Hello, world!";`} />;
+<CodeHighlight text={`const greeting = "Hello, world!";`} />
 ```
 
 ## CustomToast Component
@@ -315,6 +326,7 @@ import CodeHighlight from "./path/to/CodeHighlight";
   - A callback function triggered when the 'Don't Show Again' button is clicked.
 
 - **simple**: _Boolean_ (optional)
+
   - If `true`, displays the toast in a simple style without a headline.
 
 ### Usage
@@ -322,7 +334,7 @@ import CodeHighlight from "./path/to/CodeHighlight";
 Here's an example of how to use the `CustomToast` component:
 
 ```jsx
-import CustomToast from "./path/to/CustomToast";
+import { CustomToast } from "blocksin-system";
 
 <CustomToast
   showToast={showToastState}
@@ -332,7 +344,51 @@ import CustomToast from "./path/to/CustomToast";
   time={3000}
   showAgain={true}
   onDismissForever={handleDismissForever}
-/>;
+/>
+```
+
+## DropdownMenu Component
+
+### Overview
+
+`DropdownMenu` is a React component that provides a customizable dropdown menu for various actions or options. It is built using the Radix UI Dropdown Menu primitive and includes features such as submenus, radio groups, checkbox items, and custom icons.
+
+### Properties DropdownMenu.Content
+
+- **sideOffset**: _Number_ (optional)
+
+  - The distance in pixels from the trigger element to the content.
+
+- **align**: _String_ (optional)
+
+  - The alignment of the content relative to the trigger. Can be "start", "center", or "end".
+
+### Usage
+
+Here is an example of how to use the `DropdownMenu` component:
+
+```jsx
+import { DropdownMenu, IconButton } from "blocksin-system";
+import { SliderIcon } from "./path/to/your/components";
+
+const MyComponent = () => {
+  return (
+    <DropdownMenu>
+      <DropdownMenu.Trigger asChild>
+        <IconButton variant="outline">
+          <SliderIcon />
+        </IconButton>
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Content side="bottom" align="start">
+        <DropdownMenu.RadioGroup defaultValue="Item1">
+          <DropdownMenu.RadioItem value="Item1">Item 1</DropdownMenu.RadioItem>
+          <DropdownMenu.RadioItem value="Item2">Item 2</DropdownMenu.RadioItem>
+          <DropdownMenu.RadioItem value="Item3">Item 3</DropdownMenu.RadioItem>
+        </DropdownMenu.RadioGroup>
+      </DropdownMenu.Content>
+    </DropdownMenu>
+  );
+};
 ```
 
 ## Flex Component
@@ -393,13 +449,13 @@ The `Flex` component is a React utility component designed to streamline the usa
 Here's an example of how to use the `Flex` component:
 
 ```jsx
-import Flex from "./path/to/Flex";
+import { Flex } from "blocksin-system";
 
 <Flex direction="column" align="center" justify="space-between" gap={10}>
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
-</Flex>;
+</Flex>
 ```
 
 ## Heading Component
@@ -426,6 +482,7 @@ The `Heading` component is a versatile React component for rendering heading tex
   - The content to be displayed inside the heading tag.
 
 - **style**: _String_ (optional)
+
   - Custom style tag.
 
 ### Usage
@@ -433,11 +490,11 @@ The `Heading` component is a versatile React component for rendering heading tex
 Here's an example of how to use the `Heading` component:
 
 ```jsx
-import Heading from "./path/to/Heading";
+import { Heading } from "blocksin-system";
 
 <Heading level={2} weight="bold">
   Your Main Title Here
-</Heading>;
+</Heading>
 ```
 
 ## IconButton Component
@@ -482,6 +539,7 @@ The `IconButton` component is a React component designed for creating icon-based
   - Default is `false`.
 
 - **badgeLabel**: _String_ (optional)
+
   - The text to be displayed inside the badge.
 
 ### Usage
@@ -489,12 +547,12 @@ The `IconButton` component is a React component designed for creating icon-based
 Here's an example of how to use the `IconButton` component:
 
 ```jsx
-import IconButton from "./path/to/IconButton";
+import { IconButton } from "blocksin-system";
 import { YourIconComponent } from "your-icon-library";
 
 <IconButton onClick={handleClick} size="large" variant="outline">
   <YourIconComponent />
-</IconButton>;
+</IconButton>
 ```
 
 ## Iframe Component
@@ -511,6 +569,7 @@ import { YourIconComponent } from "your-icon-library";
   - If not provided, a default Figma integration message is displayed.
 
 - **title**: _String_ (optional)
+
   - A descriptive title for the iframe, which is useful for accessibility.
   - Default is `"Iframe Title"`.
 
@@ -519,9 +578,9 @@ import { YourIconComponent } from "your-icon-library";
 Here's an example of how to use the `Iframe`:
 
 ```jsx
-import Iframe from "./path/to/Iframe";
+import { Iframe } from "blocksin-system";
 
-<Iframe url="https://example.com" title="Embedded Content" />;
+<Iframe url="https://example.com" title="Embedded Content" />
 ```
 
 ## Input Component
@@ -582,6 +641,7 @@ import Iframe from "./path/to/Iframe";
   - Enables validation display for the input field.
 
 - **name**: _String_ (optional)
+
   - The name attribute of the input field.
 
 ### Usage
@@ -589,7 +649,7 @@ import Iframe from "./path/to/Iframe";
 Here's an example of how to use the `Input` component:
 
 ```jsx
-import Input from "./path/to/Input";
+import { Input } from "blocksin-system";
 
 <Input
   label="Email Address"
@@ -597,7 +657,7 @@ import Input from "./path/to/Input";
   type="email"
   value={email}
   onChange={handleEmailChange}
-/>;
+/>
 ```
 
 ## Loader Component
@@ -615,9 +675,9 @@ The `Loader` component is a React component that displays an animated loading in
 The component does not accept any props and is used simply by rendering it where a loading indicator is needed:
 
 ```jsx
-import Loader from "./path/to/Loader";
+import { Loader } from "blocksin-system";
 
-<Loader />;
+<Loader />
 ```
 
 ## Paragraph Component
@@ -643,6 +703,7 @@ The `Paragraph` component is a React component for rendering text content. It pr
   - Default is `regular`.
 
 - **children**: _Node_ (required)
+
   - The text content to be displayed inside the paragraph.
 
 ### Usage
@@ -650,11 +711,11 @@ The `Paragraph` component is a React component for rendering text content. It pr
 Here's an example of how to use the `Paragraph` component:
 
 ```jsx
-import Paragraph from "./path/to/Paragraph";
+import { Paragraph } from "blocksin-system";
 
 <Paragraph size="large" weight="bold">
   This is a large, bold paragraph.
-</Paragraph>;
+</Paragraph>
 ```
 
 ## Spinner Component
@@ -672,9 +733,9 @@ The `Spinner` component is a React component designed to display an animated spi
 The component does not accept any props and is used simply by rendering it where an animated spinner is needed:
 
 ```jsx
-import Spinner from "./path/to/Spinner";
+import { Spinner } from "blocksin-system";
 
-<Spinner />;
+<Spinner />
 ```
 
 ## Switch Component
@@ -685,10 +746,21 @@ The `CustomSwitch` component is a customizable switch control for React applicat
 
 ### Properties
 
-- **id** (_String_ - required): A unique identifier for the switch. It associates the switch with its label for accessibility.
-- **checked** (_Boolean_ - required): Indicates the switch's state, either "on" (true) or "off" (false).
-- **onCheckedChange** (_Function_ - required): Callback function triggered when the switch's state changes, receiving the new state as an argument.
-- **children** (_Node_ - optional): Content displayed alongside the switch, typically used as a label. When provided, the switch and label are rendered inside a `Flex` container for layout purposes.
+- **id** (_String_ - required):
+
+  - A unique identifier for the switch. It associates the switch with its label for accessibility.
+
+- **checked** (_Boolean_ - required):
+
+  - Indicates the switch's state, either "on" (true) or "off" (false).
+
+- **onCheckedChange** (_Function_ - required):
+  
+  - Callback function triggered when the switch's state changes, receiving the new state as an argument.
+
+- **children** (_Node_ - optional):
+
+  - Content displayed alongside the switch, typically used as a label. When provided, the switch and label are rendered inside a `Flex` container for layout purposes.
 
 ### Styling
 
@@ -705,7 +777,7 @@ Adjust these classes in your SCSS to fit the design of your application.
 #### With Label
 
 ```jsx
-import CustomSwitch from "./path/to/CustomSwitch";
+import { CustomSwitch } from "blocksin-system";
 
 function ExampleWithLabel() {
   const [isToggled, setIsToggled] = React.useState(false);
@@ -718,7 +790,7 @@ function ExampleWithLabel() {
     >
       Toggle me
     </CustomSwitch>
-  );
+  )
 }
 ```
 
@@ -735,6 +807,7 @@ The `Tag` component is a simple yet versatile React component used for displayin
   - The text content to be displayed inside the tag.
 
 - **variant**: _String_ (optional)
+
   - The visual style variant of the tag (`Normal`, `Highlighted`, etc.).
   - Default is `"Normal"`.
 
@@ -743,9 +816,9 @@ The `Tag` component is a simple yet versatile React component used for displayin
 Here's an example of how to use the `Tag` component:
 
 ```jsx
-import Tag from "./path/to/Tag";
+import { Tag } from "blocksin-system";
 
-<Tag text="Technology" variant="Highlighted" />;
+<Tag text="Technology" variant="Highlighted" />
 ```
 
 ## TextArea Component
@@ -779,6 +852,7 @@ The `TextArea` component is a React component that renders a multi-line text inp
   - Additional custom CSS class names to be applied.
 
 - **disabled**: _Boolean_ (optional)
+
   - Disables the textarea when set to `true`.
 
 ### Usage
@@ -786,14 +860,14 @@ The `TextArea` component is a React component that renders a multi-line text inp
 Here's an example of how to use the `TextArea` component:
 
 ```jsx
-import TextArea from "./path/to/TextArea";
+import { TextArea } from "blocksin-system";
 
 <TextArea
   label="Message"
   placeholder="Type your message here"
   value={message}
   onChange={handleMessageChange}
-/>;
+/>
 ```
 
 ## TopBanner Component
@@ -809,6 +883,7 @@ The `TopBanner` component is a React component designed to display notification 
   - The username of the currently logged-in user, used for tracking dismissed notifications.
 
 - **notifications**: _Array_ (required)
+
   - An array of notification objects. Each object should contain `title`, `text`, `id`, and `style`.
 
 ### Usage
@@ -816,7 +891,7 @@ The `TopBanner` component is a React component designed to display notification 
 Here's an example of how to use the `TopBanner` component:
 
 ```jsx
-import TopBanner from "./path/to/TopBanner";
+import { TopBanner } from "blocksin-system";
 
 const notifications = [
   {
@@ -833,7 +908,7 @@ const notifications = [
   },
 ];
 
-<TopBanner username="johndoe" notifications={notifications} />;
+<TopBanner username="johndoe" notifications={notifications} />
 ```
 
 ## UserOnHoldItem Component
@@ -843,14 +918,23 @@ The `UserOnHoldItem` component is designed to manage user items in a hold or app
 ### Properties
 
 - **fluid**: _Boolean_ (optional)
+
   - If `true`, the component will take the full width of its container. Default is `false`.
+
 - **user**: _Object_ (required)
+
   - An object representing the user. Should include `firstName`, `email`, `avatar`, `role`, and `isApproved` properties.
+
 - **onApprove**: _Function_ (required)
+
   - Callback function called when the "Approve" button is clicked. Receives the `user` object as an argument.
+
 - **onReject**: _Function_ (required)
+
   - Callback function called when the "Reject" button is clicked. Receives the `user` object as an argument.
+
 - **onRemove**: _Function_ (required)
+
   - Callback function called when the "Remove User" button is clicked. Receives the `user` object as an argument.
 
 ### Usage
@@ -858,8 +942,7 @@ The `UserOnHoldItem` component is designed to manage user items in a hold or app
 Here's how you can use the `UserOnHoldItem` component within your application:
 
 ```jsx
-import UserOnHoldItem from "./path/to/UserOnHoldItem";
-import Avatar from "./path/to/Avatar";
+import { UserOnHoldItem } from "blocksin-system";
 
 const user = {
   firstName: "Jane Doe",
@@ -887,7 +970,7 @@ function handleRemove(user) {
   onApprove={handleApprove}
   onReject={handleReject}
   onRemove={handleRemove}
-/>;
+/>
 ```
 
 ## UserListItem Component
@@ -911,6 +994,7 @@ function handleRemove(user) {
   - The URL or path to the user's avatar image.
 
 - **role**: _String_ (optional)
+
   - The role or title of the user.
 
 ### Usage
@@ -918,14 +1002,14 @@ function handleRemove(user) {
 Here's an example of how to use the `UserListItem` component:
 
 ```jsx
-import UserListItem from "./path/to/UserListItem";
+import { UserListItem } from "blocksin-system";
 
 <UserListItem
   name="John Doe"
   badge={3}
   avatar="/path/to/avatar.jpg"
   role="Developer"
-/>;
+/>
 ```
 
 ## Youtube Component
@@ -937,6 +1021,7 @@ The `Youtube` component is a React component for embedding YouTube videos in you
 ### Properties
 
 - **videoId**: _String_ (required)
+
   - The unique identifier (ID) of the YouTube video to be embedded.
 
 ### Usage
@@ -944,9 +1029,52 @@ The `Youtube` component is a React component for embedding YouTube videos in you
 Here's an example of how to use the `Youtube` component:
 
 ```jsx
-import YoutubeVideo from "./path/to/Youtube";
+import { Youtube } from "blocksin-system";
 
-<Youtube videoId="dQw4w9WgXcQ" />;
+<Youtube videoId="dQw4w9WgXcQ" />
+```
+
+## Select Component
+
+### Overview
+
+`Select` is a React component that provides a customizable dropdown menu for selecting an option from a list. It is built using the Radix UI Select primitive and includes features such as custom icons, scrolling buttons, and item indicators.
+
+### Properties
+
+- **value**: _String_ (required)
+
+  - The value of the currently selected item.
+
+- **onValueChange**: _Function_ (required)
+
+  - Callback function that is called when the selected value changes.
+
+### Usage
+
+Here is an example of how to use the `Select` component:
+
+```jsx
+import { Select } from "blocksin-system";
+import { useState } from 'react';
+
+const MyComponent = () => {
+  const [role, setRole] = useState('');
+
+  return (
+    <Select value={role} onValueChange={setRole}>
+      <Select.Trigger aria-label="Role">
+        <Select.Value placeholder="Select a role" />
+      </Select.Trigger>
+      <Select.Content side="bottom" sideOffset={8} align="start">
+        <Select.Item value="Design">Product Designer</Select.Item>
+        <Select.Item value="Developer">Developer</Select.Item>
+        <Select.Item value="PM">PM</Select.Item>
+        <Select.Item value="Brand">Brand Designer</Select.Item>
+      </Select.Content>
+    </Select>
+  );
+};
 ```
 
 ## Separator Component
@@ -958,6 +1086,7 @@ import YoutubeVideo from "./path/to/Youtube";
 ### Properties
 
 - **vertical**: _Boolean_ (optional)
+
   - Determines the orientation of the separator. When set to `true`, the separator is displayed vertically. By default, it is rendered horizontally.
 
 ### Usage
@@ -967,8 +1096,10 @@ Below are examples illustrating how to use the `Separator` component in both hor
 #### Horizontal Separator
 
 ```jsx
-import Separator from "./path/to/Separator";
+import { Separator } from "blocksin-system";
 
 // Renders a horizontal separator
 <Separator />;
 ```
+
+
