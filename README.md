@@ -24,12 +24,13 @@
 18. [Tabs Component](#tabs-component)
 19. [Tag Component](#tag-component)
 20. [TextArea Component](#textarea-component)
-21. [TopBanner Component](#topbanner-component)
-22. [UserOnHoldItem Component](#useronholditem-component)
-23. [UserListItem Component](#userlistitem-component)
-24. [Youtube Component](#youtube-component)
-25. [Select Component](#select-component)
-26. [Separator Component](#separator-component)
+21. [Tooltip Component](#tooltip-component)
+22. [TopBanner Component](#topbanner-component)
+23. [UserOnHoldItem Component](#useronholditem-component)
+24. [UserListItem Component](#userlistitem-component)
+25. [Youtube Component](#youtube-component)
+26. [Select Component](#select-component)
+27. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -907,6 +908,51 @@ import { TextArea } from "blocksin-system";
   value={message}
   onChange={handleMessageChange}
 />;
+```
+
+## Tooltip Component
+
+### Overview
+
+The `Tooltip` component is a lightweight and customizable React component used for displaying contextual information when hovering over or focusing on an element. It supports various positioning and can be easily integrated into any UI. Check radix-ui.com for more info.
+
+### Properties
+
+- **delayDuration**: _Number_ (optional)
+
+  - The delay duration in milliseconds before the tooltip appears.
+  - Default is `300`.
+
+- **side**: _String_ (optional)
+
+  - The preferred side of the trigger element to position the tooltip (`top`, `right`, `bottom`, `left`).
+  - Default is `"top"`.
+
+### Usage
+
+Here's an example of how to use the `Tooltip` component:
+
+```jsx
+import React from "react";
+import { Tooltip, IconButton, Paragraph } from "blocksin-system";
+import { ChatBubbleIcon } from "@radix-ui/react-icons";
+
+const Example = () => {
+  return (
+    <Tooltip delayDuration={200}>
+      <Tooltip.Trigger asChild>
+        <IconButton>
+          <ChatBubbleIcon />
+        </IconButton>
+      </Tooltip.Trigger>
+      <Tooltip.Content side="right">
+        <Paragraph size="medium">Test</Paragraph>
+      </Tooltip.Content>
+    </Tooltip>
+  );
+};
+
+export default Example;
 ```
 
 ## TopBanner Component
