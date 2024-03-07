@@ -21,14 +21,15 @@
 15. [Paragraph Component](#paragraph-component)
 16. [Spinner Component](#spinner-component)
 17. [Switch Component](#switch-component)
-18. [Tag Component](#tag-component)
-19. [TextArea Component](#textarea-component)
-20. [TopBanner Component](#topbanner-component)
-21. [UserOnHoldItem Component](#useronholditem-component)
-22. [UserListItem Component](#userlistitem-component)
-23. [Youtube Component](#youtube-component)
-24. [Select Component](#select-component)
-25. [Separator Component](#separator-component)
+18. [Tabs Component](#tabs-component)
+19. [Tag Component](#tag-component)
+20. [TextArea Component](#textarea-component)
+21. [TopBanner Component](#topbanner-component)
+22. [UserOnHoldItem Component](#useronholditem-component)
+23. [UserListItem Component](#userlistitem-component)
+24. [Youtube Component](#youtube-component)
+25. [Select Component](#select-component)
+26. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -78,7 +79,7 @@ import { Avatar } from "blocksin-system";
   avatar="/path/to/image.jpg"
   altText="John Doe"
   role="Software Engineer"
-/>
+/>;
 ```
 
 ## Badge Component
@@ -100,7 +101,7 @@ Here's an example of how to use the `Badge` component:
 ```jsx
 import { Badge } from "blocksin-system";
 
-<Badge label="New" />
+<Badge label="New" />;
 ```
 
 ## BadgeLevel Component
@@ -123,7 +124,7 @@ Here's an example of how to use the `BadgeLevel` component:
 ```jsx
 import { BadgeLevel } from "blocksin-system";
 
-<BadgeLevel badge={3} />
+<BadgeLevel badge={3} />;
 ```
 
 ## Button Component
@@ -203,7 +204,7 @@ import { Button } from "blocksin-system";
   badgeLabel="New"
 >
   Click Me
-</Button>
+</Button>;
 ```
 
 Here's an example of how to use the helper in component:
@@ -222,7 +223,7 @@ import { YourIconComponent } from "your-icon-library";
   iconLeft={YourIconComponent}
 >
   Click Me
-</Button>
+</Button>;
 ```
 
 ## Checkbox Component
@@ -264,7 +265,7 @@ import { Checkbox } from "blocksin-system";
 
 <Checkbox customID="agreeTerms" onChange={handleCheckboxChange}>
   I agree to the terms and conditions
-</Checkbox>
+</Checkbox>;
 ```
 
 ## CodeHighlight Component
@@ -286,7 +287,7 @@ Here's an example of how to use the `CodeHighlight` component:
 ```jsx
 import { CodeHighlight } from "blocksin-system";
 
-<CodeHighlight text={`const greeting = "Hello, world!";`} />
+<CodeHighlight text={`const greeting = "Hello, world!";`} />;
 ```
 
 ## Toast Component
@@ -344,7 +345,7 @@ import { Toast } from "blocksin-system";
   time={3000}
   showAgain={true}
   onDismissForever={handleDismissForever}
-/>
+/>;
 ```
 
 ## DropdownMenu Component
@@ -455,7 +456,7 @@ import { Flex } from "blocksin-system";
   <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
-</Flex>
+</Flex>;
 ```
 
 ## Heading Component
@@ -494,7 +495,7 @@ import { Heading } from "blocksin-system";
 
 <Heading level={2} weight="bold">
   Your Main Title Here
-</Heading>
+</Heading>;
 ```
 
 ## IconButton Component
@@ -552,7 +553,7 @@ import { YourIconComponent } from "your-icon-library";
 
 <IconButton onClick={handleClick} size="large" variant="outline">
   <YourIconComponent />
-</IconButton>
+</IconButton>;
 ```
 
 ## Iframe Component
@@ -580,7 +581,7 @@ Here's an example of how to use the `Iframe`:
 ```jsx
 import { Iframe } from "blocksin-system";
 
-<Iframe url="https://example.com" title="Embedded Content" />
+<Iframe url="https://example.com" title="Embedded Content" />;
 ```
 
 ## Input Component
@@ -657,7 +658,7 @@ import { Input } from "blocksin-system";
   type="email"
   value={email}
   onChange={handleEmailChange}
-/>
+/>;
 ```
 
 ## Loader Component
@@ -677,7 +678,7 @@ The component does not accept any props and is used simply by rendering it where
 ```jsx
 import { Loader } from "blocksin-system";
 
-<Loader />
+<Loader />;
 ```
 
 ## Paragraph Component
@@ -715,7 +716,7 @@ import { Paragraph } from "blocksin-system";
 
 <Paragraph size="large" weight="bold">
   This is a large, bold paragraph.
-</Paragraph>
+</Paragraph>;
 ```
 
 ## Spinner Component
@@ -735,7 +736,7 @@ The component does not accept any props and is used simply by rendering it where
 ```jsx
 import { Spinner } from "blocksin-system";
 
-<Spinner />
+<Spinner />;
 ```
 
 ## Switch Component
@@ -755,7 +756,7 @@ The `Switch` component is a customizable switch control for React applications, 
   - Indicates the switch's state, either "on" (true) or "off" (false).
 
 - **onCheckedChange** (_Function_ - required):
-  
+
   - Callback function triggered when the switch's state changes, receiving the new state as an argument.
 
 - **children** (_Node_ - optional):
@@ -790,8 +791,46 @@ function ExampleWithLabel() {
     >
       Toggle me
     </Switch>
-  )
+  );
 }
+```
+
+## Tabs Component
+
+### Overview
+
+The `Tabs` component is a powerful and flexible React component for creating tabbed interfaces in your application. It allows users to easily switch between different views or content sections, providing an organized and intuitive user experience.
+
+### Properties
+
+- **defaultValue**: _String_ (required)
+
+  - The default value of the currently selected tab.
+
+- **fluid**: _Boolean_ (optional)
+
+  - If `true`, the tabs will take up the full width of their container.
+  - Default is `false`.
+
+- **children**: _ReactNode_ (required)
+
+  - The content of the tabs, including `Tabs.List`, `Tabs.Trigger`, and `Tabs.Content` components.
+
+### Usage
+
+Here's an example of how to use the `Tabs` component:
+
+```jsx
+import { Tabs } from "blocksin-system";
+
+<Tabs defaultValue="tab1" fluid>
+  <Tabs.List aria-label="Manage your account">
+    <Tabs.Trigger value="tab1">Sign Up</Tabs.Trigger>
+    <Tabs.Trigger value="tab2">Sign In</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="tab1">{/* Sign Up content */}</Tabs.Content>
+  <Tabs.Content value="tab2">{/* Sign In content */}</Tabs.Content>
+</Tabs>;
 ```
 
 ## Tag Component
@@ -818,7 +857,7 @@ Here's an example of how to use the `Tag` component:
 ```jsx
 import { Tag } from "blocksin-system";
 
-<Tag text="Technology" variant="Highlighted" />
+<Tag text="Technology" variant="Highlighted" />;
 ```
 
 ## TextArea Component
@@ -867,7 +906,7 @@ import { TextArea } from "blocksin-system";
   placeholder="Type your message here"
   value={message}
   onChange={handleMessageChange}
-/>
+/>;
 ```
 
 ## TopBanner Component
@@ -908,7 +947,7 @@ const notifications = [
   },
 ];
 
-<TopBanner username="johndoe" notifications={notifications} />
+<TopBanner username="johndoe" notifications={notifications} />;
 ```
 
 ## UserOnHoldItem Component
@@ -970,7 +1009,7 @@ function handleRemove(user) {
   onApprove={handleApprove}
   onReject={handleReject}
   onRemove={handleRemove}
-/>
+/>;
 ```
 
 ## UserListItem Component
@@ -1009,7 +1048,7 @@ import { UserListItem } from "blocksin-system";
   badge={3}
   avatar="/path/to/avatar.jpg"
   role="Developer"
-/>
+/>;
 ```
 
 ## Youtube Component
@@ -1031,7 +1070,7 @@ Here's an example of how to use the `Youtube` component:
 ```jsx
 import { Youtube } from "blocksin-system";
 
-<Youtube videoId="dQw4w9WgXcQ" />
+<Youtube videoId="dQw4w9WgXcQ" />;
 ```
 
 ## Select Component
@@ -1056,10 +1095,10 @@ Here is an example of how to use the `Select` component:
 
 ```jsx
 import { Select } from "blocksin-system";
-import { useState } from 'react';
+import { useState } from "react";
 
 const MyComponent = () => {
-  const [role, setRole] = useState('');
+  const [role, setRole] = useState("");
 
   return (
     <Select value={role} onValueChange={setRole}>
@@ -1101,5 +1140,3 @@ import { Separator } from "blocksin-system";
 // Renders a horizontal separator
 <Separator />;
 ```
-
-
