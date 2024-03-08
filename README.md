@@ -9,28 +9,29 @@
 3. [BadgeLevel Component](#badgelevel-component)
 4. [Button Component](#button-component)
 5. [Checkbox Component](#checkbox-component)
-6. [CodeHighlight Component](#codehighlight-component)
-7. [Toast Component](#toast-component)
-8. [DropdownMenu Component](#dropdownmenu-component)
-9. [Flex Component](#flex-component)
-10. [Heading Component](#heading-component)
-11. [IconButton Component](#iconbutton-component)
-12. [Iframe Component](#iframe-component)
-13. [Input Component](#input-component)
-14. [Loader Component](#loader-component)
-15. [Paragraph Component](#paragraph-component)
-16. [Spinner Component](#spinner-component)
-17. [Switch Component](#switch-component)
-18. [Tabs Component](#tabs-component)
-19. [Tag Component](#tag-component)
-20. [TextArea Component](#textarea-component)
-21. [Tooltip Component](#tooltip-component)
-22. [TopBanner Component](#topbanner-component)
-23. [UserOnHoldItem Component](#useronholditem-component)
-24. [UserListItem Component](#userlistitem-component)
-25. [Youtube Component](#youtube-component)
-26. [Select Component](#select-component)
-27. [Separator Component](#separator-component)
+6. [ComboBox Component](#combobox-component)
+7. [CodeHighlight Component](#codehighlight-component)
+8. [Toast Component](#toast-component)
+9. [DropdownMenu Component](#dropdownmenu-component)
+10. [Flex Component](#flex-component)
+11. [Heading Component](#heading-component)
+12. [IconButton Component](#iconbutton-component)
+13. [Iframe Component](#iframe-component)
+14. [Input Component](#input-component)
+15. [Loader Component](#loader-component)
+16. [Paragraph Component](#paragraph-component)
+17. [Spinner Component](#spinner-component)
+18. [Switch Component](#switch-component)
+19. [Tabs Component](#tabs-component)
+20. [Tag Component](#tag-component)
+21. [TextArea Component](#textarea-component)
+22. [Tooltip Component](#tooltip-component)
+23. [TopBanner Component](#topbanner-component)
+24. [UserOnHoldItem Component](#useronholditem-component)
+25. [UserListItem Component](#userlistitem-component)
+26. [Youtube Component](#youtube-component)
+27. [Select Component](#select-component)
+28. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -225,6 +226,73 @@ import { YourIconComponent } from "your-icon-library";
 >
   Click Me
 </Button>;
+```
+
+## ComboBox Component
+
+### Overview
+
+The `ComboBox` component is a multi-select dropdown component that allows users to select multiple options from a list. It supports custom rendering of options, including displaying avatars and other custom elements.
+
+### Properties
+
+- **options**: _Array_ (required)
+
+  - An array of option objects that can be selected. Each option object should have a `label`, `value`, and optionally an `avatar` property.
+
+- **value**: _Array_ (required)
+
+  - An array of selected option objects.
+
+- **onChange**: _Function_ (required)
+
+  - A callback function that is called when the selected options change. It receives the updated array of selected options as an argument.
+
+- **placeholder**: _String_ (optional)
+
+  - A placeholder text to display when no options are selected.
+
+- **isMulti**: _Boolean_ (optional)
+
+  - A boolean indicating whether multiple options can be selected. Defaults to `true`.
+
+- **fluid**: _Boolean_ (optional)
+
+  - A boolean indicating whether the component should expand to fill its container's width.
+
+### Usage
+
+Here's an example of how to use the `ComboBox` component:
+
+```jsx
+import { ComboBox } from "blocksin-system";
+
+const options = [
+  { label: "John Doe", value: "1", avatar: "path/to/avatar1.jpg" },
+  { label: "Jane Doe", value: "2", avatar: "path/to/avatar2.jpg" },
+  { label: "Bob Smith", value: "3", avatar: "path/to/avatar3.jpg" },
+];
+
+const App = () => {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleChange = (options) => {
+    setSelectedOptions(options);
+  };
+
+  return (
+    <ComboBox
+      options={options}
+      value={selectedOptions}
+      onChange={handleChange}
+      placeholder="Select owners..."
+      isMulti={true}
+      fluid
+    />
+  );
+};
+
+export default App;
 ```
 
 ## Checkbox Component
