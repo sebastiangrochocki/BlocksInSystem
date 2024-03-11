@@ -1,37 +1,44 @@
 # BlocksInSystem
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/blocks-in-system-logo.svg)
+[![BlocksIn Design System Logo](https://sebikostudio.com/utils/blocks-in-system-logo.svg)](https://system.blocksin.com/)
+
+Click logo to visit system.blocksin.com
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system.png)
 
 ### Table of Contents
 
 1. [Avatar Component](#avatar-component)
-2. [Badge Component](#badge-component)
-3. [BadgeLevel Component](#badgelevel-component)
-4. [Button Component](#button-component)
-5. [Checkbox Component](#checkbox-component)
-6. [ComboBox Component](#combobox-component)
-7. [CodeHighlight Component](#codehighlight-component)
-8. [Toast Component](#toast-component)
-9. [DropdownMenu Component](#dropdownmenu-component)
-10. [Flex Component](#flex-component)
-11. [Heading Component](#heading-component)
-12. [IconButton Component](#iconbutton-component)
-13. [Iframe Component](#iframe-component)
-14. [Input Component](#input-component)
-15. [Loader Component](#loader-component)
-16. [Paragraph Component](#paragraph-component)
-17. [Spinner Component](#spinner-component)
-18. [Switch Component](#switch-component)
-19. [Tabs Component](#tabs-component)
-20. [Tag Component](#tag-component)
-21. [TextArea Component](#textarea-component)
-22. [Tooltip Component](#tooltip-component)
-23. [TopBanner Component](#topbanner-component)
-24. [UserOnHoldItem Component](#useronholditem-component)
-25. [UserListItem Component](#userlistitem-component)
-26. [Youtube Component](#youtube-component)
-27. [Select Component](#select-component)
-28. [Separator Component](#separator-component)
+2. [AvatarGroup Component](#avatargroup-component)
+3. [Badge Component](#badge-component)
+4. [BadgeLevel Component](#badgelevel-component)
+5. [Button Component](#button-component)
+6. [Checkbox Component](#checkbox-component)
+7. [ComboBox Component](#combobox-component)
+8. [CodeHighlight Component](#codehighlight-component)
+9. [Toast Component](#toast-component)
+10. [DropdownMenu Component](#dropdownmenu-component)
+11. [Flex Component](#flex-component)
+12. [Heading Component](#heading-component)
+13. [IconButton Component](#iconbutton-component)
+14. [Iframe Component](#iframe-component)
+15. [Input Component](#input-component)
+16. [Loader Component](#loader-component)
+17. [Paragraph Component](#paragraph-component)
+18. [Spinner Component](#spinner-component)
+19. [Switch Component](#switch-component)
+20. [Table Component](#table-component)
+21. [Tabs Component](#tabs-component)
+22. [Tag Component](#tag-component)
+23. [TextArea Component](#textarea-component)
+24. [Tooltip Component](#tooltip-component)
+25. [TopBanner Component](#topbanner-component)
+26. [UserOnHoldItem Component](#useronholditem-component)
+27. [UserListItem Component](#userlistitem-component)
+28. [UserItem Component](#useritem-component)
+29. [Youtube Component](#youtube-component)
+30. [Select Component](#select-component)
+31. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -46,6 +53,8 @@ To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans'
 --font-accent-bold: "DarkerGrotesque-Bold";
 --font-accent-light: "DarkerGrotesque-Light";
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatar.png)
 
 ## Avatar Component
 
@@ -84,6 +93,36 @@ import { Avatar } from "blocksin-system";
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatargroup.png)
+
+## AvatarGroup Component
+
+### Overview
+
+`AvatarGroup` is a React component that provides a container for displaying a group of avatars. It uses the `Flex` component to align the avatars horizontally.
+
+### Properties
+
+- **children**: ReactNode:
+  - The avatar components to be grouped together.
+
+### Usage
+
+Here's an example of how to use the `AvatarGroup` component:
+
+```jsx
+import AvatarGroup from "./AvatarGroup";
+import Avatar from "./Avatar";
+
+<AvatarGroup>
+  <Avatar avatar="/path/to/image1.jpg" altText="John Doe" />
+  <Avatar avatar="/path/to/image2.jpg" altText="Jane Doe" />
+  <Avatar avatar="/path/to/image3.jpg" altText="Alice Smith" />
+</AvatarGroup>;
+```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badge.png)
+
 ## Badge Component
 
 ### Overview
@@ -105,6 +144,8 @@ import { Badge } from "blocksin-system";
 
 <Badge label="New" />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badgelevel.png)
 
 ## BadgeLevel Component
 
@@ -128,6 +169,8 @@ import { BadgeLevel } from "blocksin-system";
 
 <BadgeLevel badge={3} />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-button.png)
 
 ## Button Component
 
@@ -228,6 +271,8 @@ import { YourIconComponent } from "your-icon-library";
 </Button>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-combobox.png)
+
 ## ComboBox Component
 
 ### Overview
@@ -295,6 +340,8 @@ const App = () => {
 export default App;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-checkbox.png)
+
 ## Checkbox Component
 
 ### Overview
@@ -337,6 +384,8 @@ import { Checkbox } from "blocksin-system";
 </Checkbox>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-codehighlight.png)
+
 ## CodeHighlight Component
 
 ### Overview
@@ -358,6 +407,8 @@ import { CodeHighlight } from "blocksin-system";
 
 <CodeHighlight text={`const greeting = "Hello, world!";`} />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toast.png)
 
 ## Toast Component
 
@@ -417,6 +468,8 @@ import { Toast } from "blocksin-system";
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-dropdownmenu.png)
+
 ## DropdownMenu Component
 
 ### Overview
@@ -460,6 +513,8 @@ const MyComponent = () => {
   );
 };
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-flex.png)
 
 ## Flex Component
 
@@ -528,6 +583,8 @@ import { Flex } from "blocksin-system";
 </Flex>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-heading.png)
+
 ## Heading Component
 
 ### Overview
@@ -566,6 +623,8 @@ import { Heading } from "blocksin-system";
   Your Main Title Here
 </Heading>;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iconbutton.png)
 
 ## IconButton Component
 
@@ -625,6 +684,8 @@ import { YourIconComponent } from "your-icon-library";
 </IconButton>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iframe.png)
+
 ## Iframe Component
 
 ### Overview
@@ -652,6 +713,8 @@ import { Iframe } from "blocksin-system";
 
 <Iframe url="https://example.com" title="Embedded Content" />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-input.png)
 
 ## Input Component
 
@@ -714,6 +777,10 @@ import { Iframe } from "blocksin-system";
 
   - The name attribute of the input field.
 
+- **fluid**: _Boolean_ (optional)
+
+  - If true, the container will take up all available space.
+
 ### Usage
 
 Here's an example of how to use the `Input` component:
@@ -729,6 +796,8 @@ import { Input } from "blocksin-system";
   onChange={handleEmailChange}
 />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-loader.gif)
 
 ## Loader Component
 
@@ -749,6 +818,8 @@ import { Loader } from "blocksin-system";
 
 <Loader />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-paragraph.png)
 
 ## Paragraph Component
 
@@ -788,6 +859,8 @@ import { Paragraph } from "blocksin-system";
 </Paragraph>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-spinner.gif)
+
 ## Spinner Component
 
 ### Overview
@@ -807,6 +880,8 @@ import { Spinner } from "blocksin-system";
 
 <Spinner />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-switch.png)
 
 ## Switch Component
 
@@ -864,6 +939,102 @@ function ExampleWithLabel() {
 }
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-table.png)
+
+## Table Component
+
+### Overview
+
+`Table` is a React component designed for displaying tabular data. It supports features such as pagination, sorting, filtering, and row selection.
+
+### Properties
+
+- **columns**:
+  - Array of objects defining the columns of the table. Each object can have the following properties:
+  - **Header**: String or JSX - The header of the column.
+  - **accessor**: String - The key of the data to be accessed for this column.
+  - **Cell**: Function (optional) - Custom renderer for the cell. It receives the cell value and the row data as arguments.
+  - **maxWidth**: String (optional) - The maximum width of the column.
+- **data**:
+  - Array of objects - The data to be displayed in the table.
+- **pageSize**:
+  - Number - The number of rows to display per page.
+- **onRowClick**: Function (optional):
+  - Callback function to be called when a row is clicked. It receives the row data as an argument.
+- **multiSelect**: Boolean (optional):
+  - If `true`, enables multiple row selection with checkboxes.
+- **onMultiSelect**: Function (optional):
+  - Callback function to be called when rows are selected or deselected. It receives an array of selected row data as an argument.
+- **maxPagination**: Number (optional):
+  - The maximum number of pagination buttons to display.
+- **fluid**: Boolean (optional):
+  - If `true`, the table will take the full width of its container.
+- **search**: Boolean (optional):
+  - If `true`, enables a filter input to search the table.
+- **fullBorder**: Boolean (optional):
+  - If `true`, adds borders to all sides of the table cells.
+- **sorting**: Boolean (optional):
+  - If `true`, enables sorting functionality on the table columns.
+
+### Usage
+
+Here's an example of how to use the `Table` component:
+
+```jsx
+import Table from "./Table";
+
+const columns = [
+  { Header: "Name", accessor: "name" },
+  { Header: "Age", accessor: "age" },
+  { Header: "Country", accessor: "country" },
+];
+
+const data = [
+  { name: "John Doe", age: 30, country: "USA" },
+  { name: "Jane Doe", age: 25, country: "Canada" },
+];
+
+<Table
+  columns={columns}
+  data={data}
+  pageSize={5}
+  onRowClick={(row) => console.log(row)}
+  multiSelect={true}
+  onMultiSelect={(selectedRows) => console.log(selectedRows)}
+  maxPagination={5}
+  fluid={true}
+  search={true}
+  fullBorder={true}
+  sorting={true}
+/>;
+```
+
+Here's an example of how to add components inside the `Table` component:
+
+```jsx
+import Table from "./Table";
+import Paragraph from "./Paragraph";
+
+const columns = [
+  { Header: "Name", accessor: "name" },
+  { Header: "Age", accessor: "age", maxWidth: "100px" },
+  {
+    Header: "Country",
+    accessor: "country",
+    Cell: (value) => <Paragraph size="large">{value}</Paragraph>,
+  },
+];
+
+const data = [
+  { name: "John Doe", age: 30, country: "USA" },
+  { name: "Jane Doe", age: 25, country: "Canada" },
+];
+
+<Table columns={columns} data={data} pageSize={5} sorting={false} />;
+```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tabs.png)
+
 ## Tabs Component
 
 ### Overview
@@ -902,6 +1073,8 @@ import { Tabs } from "blocksin-system";
 </Tabs>;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tag.png)
+
 ## Tag Component
 
 ### Overview
@@ -928,6 +1101,8 @@ import { Tag } from "blocksin-system";
 
 <Tag text="Technology" variant="Highlighted" />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-textarea.png)
 
 ## TextArea Component
 
@@ -978,6 +1153,8 @@ import { TextArea } from "blocksin-system";
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tooltip.png)
+
 ## Tooltip Component
 
 ### Overview
@@ -1023,6 +1200,8 @@ const Example = () => {
 export default Example;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-topbanner.png)
+
 ## TopBanner Component
 
 ### Overview
@@ -1063,6 +1242,8 @@ const notifications = [
 
 <TopBanner username="johndoe" notifications={notifications} />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useronholditem.png)
 
 ## UserOnHoldItem Component
 
@@ -1126,6 +1307,8 @@ function handleRemove(user) {
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-userlistitem.png)
+
 ## UserListItem Component
 
 ### Overview
@@ -1165,6 +1348,42 @@ import { UserListItem } from "blocksin-system";
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useritem.png)
+
+## UserItem Component
+
+### Overview
+
+`UserItem` is a React component that displays a user's information, including their avatar, name, and helper text (such as a role or status). It is designed to be used in various contexts, such as inside tables or dropdown menu items.
+
+### Properties
+
+- **name**: _String_:
+  - The name of the user.
+- **avatar**: _String_:
+  - The URL or path of the avatar image.
+- **helper**: _String_ (optional):
+  - Additional text to display, such as the user's role or status.
+- **role**: _String_ (optional):
+  - The role or title associated with the user, displayed in the tooltip of the avatar.
+
+### Usage
+
+Here's an example of how to use the `UserItem` component:
+
+```jsx
+import UserItem from "./UserItem";
+
+<UserItem
+  name="John Doe"
+  avatar="/path/to/avatar.jpg"
+  helper="Software Engineer"
+  role="Team Lead"
+/>;
+```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-youtube.png)
+
 ## Youtube Component
 
 ### Overview
@@ -1186,6 +1405,8 @@ import { Youtube } from "blocksin-system";
 
 <Youtube videoId="dQw4w9WgXcQ" />;
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-select.png)
 
 ## Select Component
 
@@ -1229,6 +1450,8 @@ const MyComponent = () => {
   );
 };
 ```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-separator.png)
 
 ## Separator Component
 
