@@ -4,7 +4,7 @@
 
 Click logo to visit system.blocksin.com
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system.png)
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-1.png)
 
 ### Table of Contents
 
@@ -57,9 +57,9 @@ To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans'
 --font-accent-light: "DarkerGrotesque-Light";
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatar.png)
-
 ## Avatar Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatar.png)
 
 ### Overview
 
@@ -77,10 +77,19 @@ To ensure optimal appearance and functionality, BlocksIn System uses 'Open Sans'
   - Alternative text for the avatar image for accessibility purposes.
   - Defaults to "Avatar" if not provided.
 
-- **role**: _String_ (optional)
+- **text**: _String_ (optional)
+
+  - Text for the avatar image for accessibility purposes.
+  - Defaults to "Avatar" if not provided.
+
+- **role**: _String_ (optional, deprecated)
 
   - The role or title associated with the user.
   - Displayed in the tooltip alongside the `altText`.
+
+- **size**: _String_ (optional)
+
+  - Default "large".
 
 ### Usage
 
@@ -93,12 +102,13 @@ import { Avatar } from "blocksin-system";
   avatar="/path/to/image.jpg"
   altText="John Doe"
   role="Software Engineer"
+  size="medium
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatargroup.png)
-
 ## AvatarGroup Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-avatargroup.png)
 
 ### Overview
 
@@ -124,9 +134,9 @@ import Avatar from "./Avatar";
 </AvatarGroup>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badge.png)
-
 ## Badge Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badge.png)
 
 ### Overview
 
@@ -148,9 +158,9 @@ import { Badge } from "blocksin-system";
 <Badge label="New" />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badgelevel.png)
-
 ## BadgeLevel Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-badgelevel.png)
 
 ### Overview
 
@@ -173,9 +183,9 @@ import { BadgeLevel } from "blocksin-system";
 <BadgeLevel badge={3} />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-button.png)
-
 ## Button Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-button.png)
 
 ### Overview
 
@@ -274,9 +284,9 @@ import { YourIconComponent } from "your-icon-library";
 </Button>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-combobox.png)
-
 ## ComboBox Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-combobox.png)
 
 ### Overview
 
@@ -343,9 +353,9 @@ const App = () => {
 export default App;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-checkbox.png)
-
 ## Checkbox Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-checkbox.png)
 
 ### Overview
 
@@ -387,9 +397,9 @@ import { Checkbox } from "blocksin-system";
 </Checkbox>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-codehighlight.png)
-
 ## CodeHighlight Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-codehighlight.png)
 
 ### Overview
 
@@ -411,9 +421,9 @@ import { CodeHighlight } from "blocksin-system";
 <CodeHighlight text={`const greeting = "Hello, world!";`} />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toast.png)
-
 ## Toast Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toast.png)
 
 ### Overview
 
@@ -471,9 +481,9 @@ import { Toast } from "blocksin-system";
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-dropdownmenu.png)
-
 ## DropdownMenu Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-dropdownmenu.png)
 
 ### Overview
 
@@ -517,9 +527,9 @@ const MyComponent = () => {
 };
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-flex.png)
-
 ## Flex Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-flex.png)
 
 ### Overview
 
@@ -586,9 +596,9 @@ import { Flex } from "blocksin-system";
 </Flex>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-heading.png)
-
 ## Heading Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-heading.png)
 
 ### Overview
 
@@ -627,9 +637,9 @@ import { Heading } from "blocksin-system";
 </Heading>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iconbutton.png)
-
 ## IconButton Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iconbutton.png)
 
 ### Overview
 
@@ -687,9 +697,9 @@ import { YourIconComponent } from "your-icon-library";
 </IconButton>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iframe.png)
-
 ## Iframe Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-iframe.png)
 
 ### Overview
 
@@ -717,9 +727,9 @@ import { Iframe } from "blocksin-system";
 <Iframe url="https://example.com" title="Embedded Content" />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-input.png)
-
 ## Input Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-input.png)
 
 ### Overview
 
@@ -800,9 +810,9 @@ import { Input } from "blocksin-system";
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-loader.gif)
-
 ## Loader Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-loader.gif)
 
 ### Overview
 
@@ -822,9 +832,9 @@ import { Loader } from "blocksin-system";
 <Loader />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-paragraph.png)
-
 ## Paragraph Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-paragraph.png)
 
 ### Overview
 
@@ -862,9 +872,9 @@ import { Paragraph } from "blocksin-system";
 </Paragraph>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-spinner.gif)
-
 ## Spinner Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-spinner.gif)
 
 ### Overview
 
@@ -884,9 +894,9 @@ import { Spinner } from "blocksin-system";
 <Spinner />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-switch.png)
-
 ## Switch Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-switch.png)
 
 ### Overview
 
@@ -942,9 +952,9 @@ function ExampleWithLabel() {
 }
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-table.png)
-
 ## Table Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-table.png)
 
 ### Overview
 
@@ -1036,9 +1046,9 @@ const data = [
 <Table columns={columns} data={data} pageSize={5} sorting={false} />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tabs.png)
-
 ## Tabs Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tabs.png)
 
 ### Overview
 
@@ -1076,9 +1086,9 @@ import { Tabs } from "blocksin-system";
 </Tabs>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tag.png)
-
 ## Tag Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tag.png)
 
 ### Overview
 
@@ -1105,9 +1115,9 @@ import { Tag } from "blocksin-system";
 <Tag text="Technology" variant="Highlighted" />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-textarea.png)
-
 ## TextArea Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-textarea.png)
 
 ### Overview
 
@@ -1156,9 +1166,9 @@ import { TextArea } from "blocksin-system";
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toggle.png)
-
 ## Toggle Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toggle.png)
 
 ### Overview
 
@@ -1186,9 +1196,9 @@ import { ViewGridIcon } from "@radix-ui/react-icons";
 </Toggle>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-togglegroup.png)
-
 ## ToggleGroup Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-togglegroup.png)
 
 ### Overview
 
@@ -1219,9 +1229,9 @@ import { ViewGridIcon, ViewListIcon } from "@radix-ui/react-icons";
 </ToggleGroup>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tooltip.png)
-
 ## Tooltip Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tooltip.png)
 
 ### Overview
 
@@ -1266,9 +1276,9 @@ const Example = () => {
 export default Example;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-topbanner.png)
-
 ## TopBanner Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-topbanner.png)
 
 ### Overview
 
@@ -1309,9 +1319,9 @@ const notifications = [
 <TopBanner username="johndoe" notifications={notifications} />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useronholditem.png)
-
 ## UserOnHoldItem Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useronholditem.png)
 
 The `UserOnHoldItem` component is designed to manage user items in a hold or approval state within your application. It displays user information alongside actions to approve, reject, or remove a user, providing a convenient way to handle user management tasks.
 
@@ -1373,9 +1383,9 @@ function handleRemove(user) {
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-userlistitem.png)
-
 ## UserListItem Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-userlistitem.png)
 
 ### Overview
 
@@ -1414,9 +1424,9 @@ import { UserListItem } from "blocksin-system";
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useritem.png)
-
 ## UserItem Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-useritem.png)
 
 ### Overview
 
@@ -1448,9 +1458,9 @@ import UserItem from "./UserItem";
 />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-youtube.png)
-
 ## Youtube Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-youtube.png)
 
 ### Overview
 
@@ -1472,9 +1482,9 @@ import { Youtube } from "blocksin-system";
 <Youtube videoId="dQw4w9WgXcQ" />;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-scrollarea.png)
-
 ## ScrollArea Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-scrollarea.png)
 
 ### Overview
 
@@ -1510,9 +1520,9 @@ import { Flex } from "./Flex";
 </ScrollArea>;
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-select.png)
-
 ## Select Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-select.png)
 
 ### Overview
 
@@ -1555,9 +1565,9 @@ const MyComponent = () => {
 };
 ```
 
-![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-separator.png)
-
 ## Separator Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-separator.png)
 
 ### Overview
 
