@@ -31,14 +31,17 @@ Click logo to visit system.blocksin.com
 21. [Tabs Component](#tabs-component)
 22. [Tag Component](#tag-component)
 23. [TextArea Component](#textarea-component)
-24. [Tooltip Component](#tooltip-component)
-25. [TopBanner Component](#topbanner-component)
-26. [UserOnHoldItem Component](#useronholditem-component)
-27. [UserListItem Component](#userlistitem-component)
-28. [UserItem Component](#useritem-component)
-29. [Youtube Component](#youtube-component)
-30. [Select Component](#select-component)
-31. [Separator Component](#separator-component)
+24. [Toggle Component](#toggle-component)
+25. [ToggleGroup Component](#togglegroup-component)
+26. [Tooltip Component](#tooltip-component)
+27. [TopBanner Component](#topbanner-component)
+28. [UserOnHoldItem Component](#useronholditem-component)
+29. [UserListItem Component](#userlistitem-component)
+30. [UserItem Component](#useritem-component)
+31. [Youtube Component](#youtube-component)
+32. [ScrollArea Component](#scrollarea-component)
+33. [Select Component](#select-component)
+34. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -1153,6 +1156,69 @@ import { TextArea } from "blocksin-system";
 />;
 ```
 
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toggle.png)
+
+## Toggle Component
+
+### Overview
+
+`Toggle` is a React component that provides a single toggle button, allowing the user to switch between an on and off state. It is built using Radix UI's `Toggle` primitive.
+
+### Properties
+
+- **children**: ReactNode
+  - The content of the toggle button.
+- **onPressedChange**: (pressed: boolean) => void
+  - A callback function that is called when the toggle button is pressed. It receives a boolean indicating the new pressed state.
+- **ref**: React.Ref (optional)
+  - A ref to be forwarded to the root element of the `Toggle`.
+
+### Usage
+
+Here's an example of how to use the `Toggle` component:
+
+```jsx
+import Toggle from "./Toggle";
+import { ViewGridIcon } from "@radix-ui/react-icons";
+
+<Toggle onPressedChange={(pressed) => console.log(pressed)}>
+  <ViewGridIcon />
+</Toggle>;
+```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-togglegroup.png)
+
+## ToggleGroup Component
+
+### Overview
+
+`ToggleGroup` is a React component that provides a group of toggle buttons, allowing the user to select one or multiple options. It is built using Radix UI's `ToggleGroup` primitive.
+
+### Properties
+
+- **children**: ReactNode
+  - The toggle buttons to be grouped together.
+- **ref**: React.Ref (optional)
+  - A ref to be forwarded to the root element of the `ToggleGroup`.
+
+### Usage
+
+Here's an example of how to use the `ToggleGroup` component:
+
+```jsx
+import ToggleGroup from "./ToggleGroup";
+import { ViewGridIcon, ViewListIcon } from "@radix-ui/react-icons";
+
+<ToggleGroup type="single" aria-label="View options">
+  <ToggleGroup.Item value="grid" aria-label="Grid view">
+    <ViewGridIcon />
+  </ToggleGroup.Item>
+  <ToggleGroup.Item value="list" aria-label="List view">
+    <ViewListIcon />
+  </ToggleGroup.Item>
+</ToggleGroup>;
+```
+
 ![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tooltip.png)
 
 ## Tooltip Component
@@ -1404,6 +1470,44 @@ Here's an example of how to use the `Youtube` component:
 import { Youtube } from "blocksin-system";
 
 <Youtube videoId="dQw4w9WgXcQ" />;
+```
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-scrollarea.png)
+
+## ScrollArea Component
+
+### Overview
+
+`ScrollArea` is a React component that provides a customizable scrollable area with optional custom scrollbars. It is built using Radix UI's `ScrollArea` primitive.
+
+### Properties
+
+- **children**: ReactNode
+  - The content to be displayed inside the scrollable area.
+- **style**: CSSProperties (optional)
+  - Additional styles to be applied to the root element of the `ScrollArea`.
+- **ref**: React.Ref (optional)
+  - A ref to be forwarded to the root element of the `ScrollArea`.
+
+### Usage
+
+Here's an example of how to use the `ScrollArea` component:
+
+```jsx
+import ScrollArea from "./ScrollArea";
+import { Flex } from "./Flex";
+
+<ScrollArea style={{ height: "200px", width: "150px" }}>
+  <Flex
+    style={{
+      height: "900px",
+      width: "200px",
+      background: "var(--gray-200)",
+    }}
+  >
+    Long rectangle
+  </Flex>
+</ScrollArea>;
 ```
 
 ![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-select.png)
