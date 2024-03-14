@@ -13,35 +13,36 @@ Click logo to visit system.blocksin.com
 3. [Badge Component](#badge-component)
 4. [BadgeLevel Component](#badgelevel-component)
 5. [Button Component](#button-component)
-6. [Checkbox Component](#checkbox-component)
-7. [ComboBox Component](#combobox-component)
-8. [CodeHighlight Component](#codehighlight-component)
-9. [Toast Component](#toast-component)
-10. [DropdownMenu Component](#dropdownmenu-component)
-11. [Flex Component](#flex-component)
-12. [Heading Component](#heading-component)
-13. [IconButton Component](#iconbutton-component)
-14. [Iframe Component](#iframe-component)
-15. [Input Component](#input-component)
-16. [Loader Component](#loader-component)
-17. [Paragraph Component](#paragraph-component)
-18. [Spinner Component](#spinner-component)
-19. [Switch Component](#switch-component)
-20. [Table Component](#table-component)
-21. [Tabs Component](#tabs-component)
-22. [Tag Component](#tag-component)
-23. [TextArea Component](#textarea-component)
-24. [Toggle Component](#toggle-component)
-25. [ToggleGroup Component](#togglegroup-component)
-26. [Tooltip Component](#tooltip-component)
-27. [TopBanner Component](#topbanner-component)
-28. [UserOnHoldItem Component](#useronholditem-component)
-29. [UserListItem Component](#userlistitem-component)
-30. [UserItem Component](#useritem-component)
-31. [Youtube Component](#youtube-component)
-32. [ScrollArea Component](#scrollarea-component)
-33. [Select Component](#select-component)
-34. [Separator Component](#separator-component)
+6. [Calendar Component](#calendar-component)
+7. [Checkbox Component](#checkbox-component)
+8. [ComboBox Component](#combobox-component)
+9. [CodeHighlight Component](#codehighlight-component)
+10. [Toast Component](#toast-component)
+11. [DropdownMenu Component](#dropdownmenu-component)
+12. [Flex Component](#flex-component)
+13. [Heading Component](#heading-component)
+14. [IconButton Component](#iconbutton-component)
+15. [Iframe Component](#iframe-component)
+16. [Input Component](#input-component)
+17. [Loader Component](#loader-component)
+18. [Paragraph Component](#paragraph-component)
+19. [Spinner Component](#spinner-component)
+20. [Switch Component](#switch-component)
+21. [Table Component](#table-component)
+22. [Tabs Component](#tabs-component)
+23. [Tag Component](#tag-component)
+24. [TextArea Component](#textarea-component)
+25. [Toggle Component](#toggle-component)
+26. [ToggleGroup Component](#togglegroup-component)
+27. [Tooltip Component](#tooltip-component)
+28. [TopBanner Component](#topbanner-component)
+29. [UserOnHoldItem Component](#useronholditem-component)
+30. [UserListItem Component](#userlistitem-component)
+31. [UserItem Component](#useritem-component)
+32. [Youtube Component](#youtube-component)
+33. [ScrollArea Component](#scrollarea-component)
+34. [Select Component](#select-component)
+35. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -282,6 +283,61 @@ import { YourIconComponent } from "your-icon-library";
 >
   Click Me
 </Button>;
+```
+
+## Calendar Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-calendar.png)
+
+### Overview
+
+`Calendar` is a React component that provides a customizable date picker. It allows users to select a single date or a range of dates. The component is built on top of `react-datepicker` and can be integrated with custom input components.
+
+### Properties
+
+- **children**: _ReactElement_ (required)
+
+  - The custom input component that will be used as the trigger for the calendar.
+
+- **selectedDate**: _Date | [Date, Date]_ (required)
+
+  - The currently selected date or date range.
+
+- **onChange**: _Function_ (required)
+
+  - A function that will be called with the new date or date range when the selection changes.
+
+- **range**: _Boolean_ (optional)
+
+  - If `true`, enables the selection of a date range. Defaults to `false`.
+
+- **...props**: _Object_ (optional)
+
+  - Any additional props will be passed to the underlying `react-datepicker` component.
+
+### Usage
+
+Here is an example of how to use the `Calendar` component with a custom input component:
+
+```jsx
+import React, { useState } from "react";
+import Calendar from "./path-to-your-calendar-component";
+import { Input } from "your-input-component-library";
+
+function MyComponent() {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  return (
+    <Calendar
+      selectedDate={selectedDate}
+      onChange={(date) => setSelectedDate(date)}
+    >
+      <Input placeholder="Select a date" readOnly />
+    </Calendar>
+  );
+}
+
+export default MyComponent;
 ```
 
 ## ComboBox Component
