@@ -321,8 +321,7 @@ Here is an example of how to use the `Calendar` component with a custom input co
 
 ```jsx
 import React, { useState } from "react";
-import Calendar from "./path-to-your-calendar-component";
-import { Input } from "your-input-component-library";
+import { Calendar, Input } from "bloksin-system";
 
 function MyComponent() {
   const [selectedDate, setSelectedDate] = useState(new Date());
