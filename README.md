@@ -14,35 +14,37 @@ Click logo to visit system.blocksin.com
 4. [BadgeLevel Component](#badgelevel-component)
 5. [Button Component](#button-component)
 6. [Calendar Component](#calendar-component)
-7. [Checkbox Component](#checkbox-component)
-8. [ComboBox Component](#combobox-component)
-9. [CodeHighlight Component](#codehighlight-component)
-10. [Toast Component](#toast-component)
-11. [DropdownMenu Component](#dropdownmenu-component)
-12. [Flex Component](#flex-component)
-13. [Heading Component](#heading-component)
-14. [IconButton Component](#iconbutton-component)
-15. [Iframe Component](#iframe-component)
-16. [Input Component](#input-component)
-17. [Loader Component](#loader-component)
-18. [Paragraph Component](#paragraph-component)
-19. [Spinner Component](#spinner-component)
-20. [Switch Component](#switch-component)
-21. [Table Component](#table-component)
-22. [Tabs Component](#tabs-component)
-23. [Tag Component](#tag-component)
-24. [TextArea Component](#textarea-component)
-25. [Toggle Component](#toggle-component)
-26. [ToggleGroup Component](#togglegroup-component)
-27. [Tooltip Component](#tooltip-component)
-28. [TopBanner Component](#topbanner-component)
-29. [UserOnHoldItem Component](#useronholditem-component)
-30. [UserListItem Component](#userlistitem-component)
-31. [UserItem Component](#useritem-component)
-32. [Youtube Component](#youtube-component)
-33. [ScrollArea Component](#scrollarea-component)
-34. [Select Component](#select-component)
-35. [Separator Component](#separator-component)
+7. [Card Component](#card-component)
+8. [Checkbox Component](#checkbox-component)
+9. [ComboBox Component](#combobox-component)
+10. [CodeHighlight Component](#codehighlight-component)
+11. [Toast Component](#toast-component)
+12. [DropdownMenu Component](#dropdownmenu-component)
+13. [Flex Component](#flex-component)
+14. [Heading Component](#heading-component)
+15. [IconButton Component](#iconbutton-component)
+16. [Iframe Component](#iframe-component)
+17. [Input Component](#input-component)
+18. [Loader Component](#loader-component)
+19. [Paragraph Component](#paragraph-component)
+20. [Pill Component](#pill-component)
+21. [Spinner Component](#spinner-component)
+22. [Switch Component](#switch-component)
+23. [Table Component](#table-component)
+24. [Tabs Component](#tabs-component)
+25. [Tag Component](#tag-component)
+26. [TextArea Component](#textarea-component)
+27. [Toggle Component](#toggle-component)
+28. [ToggleGroup Component](#togglegroup-component)
+29. [Tooltip Component](#tooltip-component)
+30. [TopBanner Component](#topbanner-component)
+31. [UserOnHoldItem Component](#useronholditem-component)
+32. [UserListItem Component](#userlistitem-component)
+33. [UserItem Component](#useritem-component)
+34. [Youtube Component](#youtube-component)
+35. [ScrollArea Component](#scrollarea-component)
+36. [Select Component](#select-component)
+37. [Separator Component](#separator-component)
 
 ## Introduction
 
@@ -337,6 +339,40 @@ function MyComponent() {
 }
 
 export default MyComponent;
+```
+
+## Card Component
+
+![BlocksIn Design System Card](https://sebikostudio.com/utils/system-card.png)
+
+### Overview
+
+`Card` is a React component that provides a flexible container for content. It supports different variants, such as outline and ghost, and allows for customization through props like `noPadding`.
+
+### Properties
+
+- **children**: _ReactNode_
+
+  - The content to be displayed inside the card.
+
+- **noPadding**: _Boolean_
+
+  - If true, removes padding from the card content.
+
+- **variant**: _String_
+
+  - The variant of the card. Possible values are "outline" and "ghost".
+
+## Usage
+
+Here is an example of how to use the `Card` component:
+
+```jsx
+import { Card } from "blocksin-system";
+
+<Card noPadding variant="outline">
+  {/* Card Content */}
+</Card>;
 ```
 
 ## ComboBox Component
@@ -927,6 +963,34 @@ import { Paragraph } from "blocksin-system";
 </Paragraph>;
 ```
 
+## Pill Component
+
+![BlocksIn Design System Pill](https://sebikostudio.com/utils/system-pill.png)
+
+### Overview
+
+`Pill` is a React component that represents a pill-shaped element, commonly used to display status or category information. It accepts a `status` prop to determine its visual appearance.
+
+### Properties
+
+- **children**: _ReactNode_
+
+  - The content to be displayed inside the pill.
+
+- **status**: _String_
+
+  - The status of the pill, which determines its color and styling. Possible values are "error", "warning", "success", or "disabled".
+
+### Usage
+
+Here is an example of how to use the `Pill` component:
+
+```jsx
+import { Pill } from "blocksin-system";
+
+<Pill status="success">Active</Pill>;
+```
+
 ## Spinner Component
 
 ![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-spinner.gif)
@@ -1049,7 +1113,7 @@ function ExampleWithLabel() {
 Here's an example of how to use the `Table` component:
 
 ```jsx
-import Table from "./Table";
+import { Table } from "blocksin-system";
 
 const columns = [
   { Header: "Name", accessor: "name" },
@@ -1080,8 +1144,7 @@ const data = [
 Here's an example of how to add components inside the `Table` component:
 
 ```jsx
-import Table from "./Table";
-import Paragraph from "./Paragraph";
+import { Table, Paragraph } from "blocksin-system";
 
 const columns = [
   { Header: "Name", accessor: "name" },
