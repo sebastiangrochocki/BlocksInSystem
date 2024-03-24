@@ -1223,6 +1223,10 @@ The `Tag` component is a simple yet versatile React component used for displayin
   - The visual style variant of the tag (`Normal`, `Highlighted`, etc.).
   - Default is `"Normal"`.
 
+- **color**: _String_ (optional)
+
+  - Use to set custom background color.
+
 ### Usage
 
 Here's an example of how to use the `Tag` component:
