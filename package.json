@@ -1,6 +1,6 @@
 {
   "name": "blocksin-system",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "dist/index.js",
   "files": [
     "dist"
@@ -9,6 +9,7 @@
     "build": "babel src --out-dir dist --copy-files"
   },
   "dependencies": {
+    "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-toolbar": "^1.0.4",
     "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-dropdown-menu": "^2.0.6",

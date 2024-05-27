@@ -46,7 +46,8 @@ Click logo to visit system.blocksin.com
 36. [ScrollArea Component](#scrollarea-component)
 37. [Select Component](#select-component)
 38. [Separator Component](#separator-component)
-39. [Stepper Component](#stepper-component)
+39. [Slider Component](#slider-component)
+40. [Stepper Component](#stepper-component)
 
 ## Introduction
 
@@ -1800,6 +1801,61 @@ import { Separator } from "blocksin-system";
 
 // Renders a horizontal separator
 <Separator />;
+```
+
+## Slider Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-slider.png)
+
+### Overview
+
+`Slider` is a customizable React component based on the Radix UI slider. It allows users to select a value or range of values within a defined range by dragging a handle along a track. This component is ideal for settings that involve continuous or discrete values, such as volume controls, price ranges, or any numerical input.
+
+### Properties
+
+- **defaultValue**: _Array<number> (optional)_
+
+  - The initial value of the slider.
+
+- **value**: _Array<number> (optional)_
+
+  - The controlled value of the slider.
+
+- **min**: _Number (optional)_
+
+  - The minimum value of the slider. Default is `0`.
+
+- **max**: _Number (optional)_
+
+  - The maximum value of the slider. Default is `100`.
+
+- **step**: _Number (optional)_
+
+  - The step increment value of the slider. Default is `1`.
+
+- **onValueChange**: _Function (optional)_
+
+  - Callback function triggered when the slider's value changes.
+
+- **disabled**: _Boolean (optional)_
+
+  - If `true`, the slider will be disabled. Default is `false`.
+
+- **fluid**: _Boolean (optional)_
+
+  - If `true`, the slider will expand to fit the width of its container.
+
+### Usage
+
+Below are examples illustrating how to use the `Slider` component in various configurations.
+
+#### Basic Slider
+
+```jsx
+import { Slider } from "blocksin-system";
+
+// Renders a slider with default settings
+<Slider defaultValue={[50]} max={100} step={1} />;
 ```
 
 ## Stepper Component
