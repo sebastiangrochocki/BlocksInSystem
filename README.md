@@ -36,15 +36,17 @@ Click logo to visit system.blocksin.com
 26. [TextArea Component](#textarea-component)
 27. [Toggle Component](#toggle-component)
 28. [ToggleGroup Component](#togglegroup-component)
-29. [Tooltip Component](#tooltip-component)
-30. [TopBanner Component](#topbanner-component)
-31. [UserOnHoldItem Component](#useronholditem-component)
-32. [UserListItem Component](#userlistitem-component)
-33. [UserItem Component](#useritem-component)
-34. [Youtube Component](#youtube-component)
-35. [ScrollArea Component](#scrollarea-component)
-36. [Select Component](#select-component)
-37. [Separator Component](#separator-component)
+29. [Toolbar Component](#toolbar-component)
+30. [Tooltip Component](#tooltip-component)
+31. [TopBanner Component](#topbanner-component)
+32. [UserOnHoldItem Component](#useronholditem-component)
+33. [UserListItem Component](#userlistitem-component)
+34. [UserItem Component](#useritem-component)
+35. [Youtube Component](#youtube-component)
+36. [ScrollArea Component](#scrollarea-component)
+37. [Select Component](#select-component)
+38. [Separator Component](#separator-component)
+39. [Stepper Component](#stepper-component)
 
 ## Introduction
 
@@ -1351,6 +1353,92 @@ import { ViewGridIcon, ViewListIcon } from "@radix-ui/react-icons";
 </ToggleGroup>;
 ```
 
+## Toolbar Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-toolbar.png)
+
+### Overview
+
+`Toolbar` is a flexible React component that provides a customizable toolbar for your application. It can include links, toggle groups, and separators, and supports both horizontal and vertical orientations. The `Toolbar` component is built on top of the Radix UI `@radix-ui/react-toolbar` primitives, offering a solid foundation for building interactive toolbars.
+
+### Properties
+
+#### Toolbar.Root
+
+- **orientation**: _String (optional)_
+
+  - Determines the orientation of the toolbar, either `horizontal` or `vertical`. Default is `horizontal`.
+
+- **fluid**: _Boolean (optional)_
+
+  - If `true`, the toolbar will take the full width of its container.
+
+- **children**: _Node (required)_
+
+  - The content of the toolbar, typically `Toolbar.Link`, `Toolbar.ToggleGroup`, `Toolbar.ToggleItem`, and `Toolbar.Separator` components.
+
+#### Toolbar.Link
+
+- **href**: _String (optional)_
+
+  - The URL that the link points to.
+
+- **icon**: _Component (optional)_
+
+  - An optional icon to display alongside the link text.
+
+- **children**: _Node (required)_
+
+  - The content of the link.
+
+#### Toolbar.ToggleGroup
+
+- **children**: _Node (required)_
+
+  - The content of the toggle group, typically `Toolbar.ToggleItem` components.
+
+#### Toolbar.ToggleItem
+
+- **value**: _String (required)_
+
+  - The value that the toggle item represents.
+
+- **icon**: _Component (optional)_
+
+  - An optional icon to display alongside the toggle item text.
+
+- **children**: _Node (required)_
+
+  - The content of the toggle item.
+
+#### Toolbar.Separator
+
+- **No properties**
+
+  - A visual separator to divide toolbar items.
+
+### Usage
+
+Below are examples illustrating how to use the `Toolbar` component in various configurations.
+
+#### Basic Toolbar
+
+```jsx
+import React from "react";
+import { Toolbar } from "blocksin-system";
+
+// Renders a basic toolbar
+<Toolbar>
+  <Toolbar.Link href="/home">Home</Toolbar.Link>
+  <Toolbar.Link href="/about">About</Toolbar.Link>
+  <Toolbar.Separator />
+  <Toolbar.ToggleGroup>
+    <Toolbar.ToggleItem value="bold">Bold</Toolbar.ToggleItem>
+    <Toolbar.ToggleItem value="italic">Italic</Toolbar.ToggleItem>
+  </Toolbar.ToggleGroup>
+</Toolbar>;
+```
+
 ## Tooltip Component
 
 ![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-tooltip.png)
@@ -1712,4 +1800,115 @@ import { Separator } from "blocksin-system";
 
 // Renders a horizontal separator
 <Separator />;
+```
+
+## Stepper Component
+
+![BlocksIn Design System Logo](https://sebikostudio.com/utils/system-stepper.png)
+
+### Overview
+
+`Stepper` is a versatile React component designed to guide users through a series of steps or stages in a process. It can be used for multi-step forms, onboarding processes, or any sequential workflow where progress needs to be tracked visually. The Stepper component supports both horizontal and vertical orientations, dynamic step interactions, and customizable icons, providing a flexible and intuitive way to enhance user experience.
+
+### Properties
+
+- **steps**: _Number (required)_
+
+  - The total number of steps in the stepper.
+
+- **currentStep**: _Number (required)_
+
+  - The current active step in the stepper.
+
+- **orientation**: _String (optional)_
+
+  - Determines the orientation of the stepper, either `horizontal` or `vertical`. Default is `horizontal`.
+
+- **icons**: _Array of Components (optional)_
+
+  - An array of custom icon components to display in each step.
+
+- **dynamic**: _Boolean (optional)_
+
+  - If `true`, allows steps to be clickable and navigable via keyboard.
+
+- **onStepClick**: _Function (optional)_
+
+  - Callback function triggered when a step is clicked, receiving the step number as an argument.
+
+### Usage
+
+Below are examples illustrating how to use the `Stepper` component in various configurations.
+
+#### Basic Horizontal Stepper
+
+```jsx
+import { Stepper } from "blocksin-system";
+
+// Renders a horizontal stepper with 5 steps, currently on step 3
+<Stepper steps={5} currentStep={3} />;
+```
+
+#### Vertical Stepper with Custom Icons
+
+```jsx
+import { Stepper } from "blocksin-system";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CheckIcon,
+} from "@radix-ui/react-icons";
+
+// Renders a vertical stepper with custom icons
+<Stepper
+  steps={5}
+  currentStep={3}
+  orientation="vertical"
+  icons={[
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+    CheckIcon,
+  ]}
+/>;
+```
+
+#### Dynamic Stepper
+
+```jsx
+import React, { useState } from "react";
+import { Stepper } from "blocksin-system";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  CheckIcon,
+} from "@radix-ui/react-icons";
+
+const DynamicStepperExample = () => {
+  const [currentStep, setCurrentStep] = useState(3);
+
+  const handleStepClick = (step) => {
+    setCurrentStep(step);
+  };
+
+  return (
+    <Stepper
+      steps={5}
+      currentStep={currentStep}
+      orientation="horizontal"
+      icons={[
+        ChevronLeftIcon,
+        ChevronRightIcon,
+        ChevronLeftIcon,
+        ChevronRightIcon,
+        CheckIcon,
+      ]}
+      dynamic={true}
+      onStepClick={handleStepClick}
+    />
+  );
+};
+
+export default DynamicStepperExample;
 ```
