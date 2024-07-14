@@ -840,6 +840,10 @@ import { Iframe } from "blocksin-system";
   - The label text displayed alongside the input field.
   - Default is `"First name"`.
 
+- **icon**: _Component_ (optional)
+
+  - A React component (icon) to be displayed on the right side of the Input field.
+
 - **placeholder**: _String_ (optional)
 
   - The placeholder text displayed inside the input field.
